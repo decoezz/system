@@ -20,14 +20,14 @@ if(message.content.split(' ')[0] == 'L') {
           let embed = new Discord.RichEmbed()
     .setColor("#FF00FF")
     .setThumbnail(message.author.avatarURL)   
-                                      .addField(' „ «·«—”«· »Ê«”ÿ… :', "<@" + message.author.id + ">")
+                                      .addField('√ä√£ √á√°√á√ë√ì√á√° √à√¶√á√ì√ò√â :', "<@" + message.author.id + ">")
                  message.channel.sendEmbed(embed);
         message.guild.members.forEach(m => {
             var bc = new Discord.RichEmbed()
 .addField('**? Sender  :**', `*** ? ${message.author.username}#${message.author.discriminator}***`)
             .addField('***? Server  :***', `*** ? ${message.guild.name}***`)               
     .setColor('#ff0000')
-                 .addField('¯', args)
+                 .addField('√∏', args)
             m.send(``,{embed: bc});
         });
     }
@@ -64,44 +64,44 @@ client.on("message", message => {
     var msg = message.content.toLowerCase();
     if( !message.guild ) return;
     if( !msg.startsWith( prefix + 'role' ) ) return;
-    if(!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(' **__·Ì” ·œÌﬂ ’·«ÕÌ« __**');
+    if(!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(' **__√°√≠√ì √°√è√≠√ü √ï√°√á√ç√≠√á√ä__**');
     if( msg.toLowerCase().startsWith( prefix + 'roleremove' ) ){
-        if( !args[0] ) return message.reply( '**:x: Ì—ÃÏ Ê÷⁄ «·‘Œ’ «·„—«œ ”Õ» „‰Â «·— »…**' );
-        if( !args[1] ) return message.reply( '**:x: Ì—ÃÏ Ê÷⁄ «·— »… «·„—«œ ”Õ»Â« „‰ «·‘Œ’**' );
+        if( !args[0] ) return message.reply( '**:x: √≠√ë√å√¨ √¶√ñ√ö √á√°√î√é√ï √á√°√£√ë√á√è √ì√ç√à √£√§√• √á√°√ë√ä√à√â**' );
+        if( !args[1] ) return message.reply( '**:x: √≠√ë√å√¨ √¶√ñ√ö √á√°√ë√ä√à√â √á√°√£√ë√á√è √ì√ç√à√•√á √£√§ √á√°√î√é√ï**' );
         var role = msg.split(' ').slice(2).join(" ").toLowerCase();
         var role1 = message.guild.roles.filter( r=>r.name.toLowerCase().indexOf(role)>-1 ).first();
-        if( !role1 ) return message.reply( '**:x: Ì—ÃÏ Ê÷⁄ «·— »… «·„—«œ ”Õ»Â« „‰ «·‘Œ’**' );if( message.mentions.members.first() ){
+        if( !role1 ) return message.reply( '**:x: √≠√ë√å√¨ √¶√ñ√ö √á√°√ë√ä√à√â √á√°√£√ë√á√è √ì√ç√à√•√á √£√§ √á√°√î√é√ï**' );if( message.mentions.members.first() ){
             message.mentions.members.first().removeRole( role1 );
-            return message.reply('**:white_check_mark: [ '+role1.name+' ] — »… [ '+args[0]+' ]  „ ”Õ» „‰ **');
+            return message.reply('**:white_check_mark: [ '+role1.name+' ] √ë√ä√à√â [ '+args[0]+' ] √ä√£ √ì√ç√à √£√§ **');
         }
         if( args[0].toLowerCase() == "all" ){
             message.guild.members.forEach(m=>m.removeRole( role1 ))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ]  „ ”Õ» „‰ «·ﬂ· — »…**');
+            return  message.reply('**:white_check_mark: [ '+role1.name+' ] √ä√£ √ì√ç√à √£√§ √á√°√ü√° √ë√ä√à√â**');
         } else if( args[0].toLowerCase() == "bots" ){
             message.guild.members.filter(m=>m.user.bot).forEach(m=>m.removeRole(role1))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ]  „ ”Õ» „‰ «·»Ê «  — »…**');
+            return  message.reply('**:white_check_mark: [ '+role1.name+' ] √ä√£ √ì√ç√à √£√§ √á√°√à√¶√ä√á√ä √ë√ä√à√â**');
         } else if( args[0].toLowerCase() == "humans" ){
             message.guild.members.filter(m=>!m.user.bot).forEach(m=>m.removeRole(role1))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ]  „ ”Õ» „‰ «·»‘—ÌÌ‰ — »…**');
+            return  message.reply('**:white_check_mark: [ '+role1.name+' ] √ä√£ √ì√ç√à √£√§ √á√°√à√î√ë√≠√≠√§ √ë√ä√à√â**');
         }  
     } else {
-        if( !args[0] ) return message.reply( '**:x: Ì—ÃÏ Ê÷⁄ «·‘Œ’ «·„—«œ «⁄ÿ«∆Â« «·— »…**' );
-        if( !args[1] ) return message.reply( '**:x: Ì—ÃÏ Ê÷⁄ «·— »… «·„—«œ «⁄ÿ«∆Â« ··‘Œ’**' );
+        if( !args[0] ) return message.reply( '**:x: √≠√ë√å√¨ √¶√ñ√ö √á√°√î√é√ï √á√°√£√ë√á√è √á√ö√ò√á√Ü√•√á √á√°√ë√ä√à√â**' );
+        if( !args[1] ) return message.reply( '**:x: √≠√ë√å√¨ √¶√ñ√ö √á√°√ë√ä√à√â √á√°√£√ë√á√è √á√ö√ò√á√Ü√•√á √°√°√î√é√ï**' );
         var role = msg.split(' ').slice(2).join(" ").toLowerCase();
         var role1 = message.guild.roles.filter( r=>r.name.toLowerCase().indexOf(role)>-1 ).first();
-        if( !role1 ) return message.reply( '**:x: Ì—ÃÏ Ê÷⁄ «·— »… «·„—«œ «⁄ÿ«∆Â« ··‘Œ’**' );if( message.mentions.members.first() ){
+        if( !role1 ) return message.reply( '**:x: √≠√ë√å√¨ √¶√ñ√ö √á√°√ë√ä√à√â √á√°√£√ë√á√è √á√ö√ò√á√Ü√•√á √°√°√î√é√ï**' );if( message.mentions.members.first() ){
             message.mentions.members.first().addRole( role1 );
-            return message.reply('**:white_check_mark: [ '+role1.name+' ] — »… [ '+args[0]+' ]  „ «⁄ÿ«¡ **');
+            return message.reply('**:white_check_mark: [ '+role1.name+' ] √ë√ä√à√â [ '+args[0]+' ] √ä√£ √á√ö√ò√á√Å **');
         }
         if( args[0].toLowerCase() == "all" ){
             message.guild.members.forEach(m=>m.addRole( role1 ))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ]  „ «⁄ÿ«¡ «·ﬂ· — »…**');
+            return  message.reply('**:white_check_mark: [ '+role1.name+' ] √ä√£ √á√ö√ò√á√Å √á√°√ü√° √ë√ä√à√â**');
         } else if( args[0].toLowerCase() == "bots" ){
             message.guild.members.filter(m=>m.user.bot).forEach(m=>m.addRole(role1))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ]  „ «⁄ÿ«¡ «·»Ê «  — »…**');
+            return  message.reply('**:white_check_mark: [ '+role1.name+' ] √ä√£ √á√ö√ò√á√Å √á√°√à√¶√ä√á√ä √ë√ä√à√â**');
         } else if( args[0].toLowerCase() == "humans" ){
             message.guild.members.filter(m=>!m.user.bot).forEach(m=>m.addRole(role1))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ]  „ «⁄ÿ«¡ «·»‘—ÌÌ‰ — »…**');
+            return  message.reply('**:white_check_mark: [ '+role1.name+' ] √ä√£ √á√ö√ò√á√Å √á√°√à√î√ë√≠√≠√§ √ë√ä√à√â**');
         }
     }
 });
@@ -116,17 +116,17 @@ client.on("message", message => {
  
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('? | **·« ÌÊÃœ ·œÌﬂ ’·«ÕÌ… ·„”Õ «·‘« **');
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('? | **√°√á √≠√¶√å√è √°√è√≠√ü √ï√°√á√ç√≠√â √°√£√ì√ç √á√°√î√á√ä**');
         var msg;
         msg = parseInt();
       
       message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
       message.channel.sendMessage("", {embed: {
-        title: "Done |  ‹‹„ „”Õ «·‘« ",
+        title: "Done | √ä√ú√ú√£ √£√ì√ç √á√°√î√á√ä",
         color: 0x06DF00,
-        description: " „ „”Õ «·—”«∆· ",
+        description: "√ä√£ √£√ì√ç √á√°√ë√ì√á√Ü√° ",
         footer: {
-          text: "©KBOOSHDev"
+          text: "¬©KBOOSHDev"
         }
       }}).then(msg => {msg.delete(3000)});
                           }
@@ -142,61 +142,61 @@ client.on("message", message => {
       .setColor("#ffff00")
       .setThumbnail(message.author.avatarURL)
       .setDescription(`
--?? ”—⁄Â « ’«· „„ «“Â
--?? ”Â· «·«” Œœ«„ 
--? ’Ì«‰Â ﬂ· ÌÊ„
--?? „Ã«‰Ì »· ﬂ«„· 
--?? «·»Ê  ⁄—»Ì Ê ”Ì „ «÷«›Â «··€Â «·‰ﬂ·Ì“Ì…
+-?? √ì√ë√ö√• √á√ä√ï√á√° √£√£√ä√á√í√•
+-?? √ì√•√° √á√°√á√ì√ä√é√è√á√£ 
+-? √ï√≠√á√§√• √ü√° √≠√¶√£
+-?? √£√å√á√§√≠ √à√° √ü√á√£√° 
+-?? √á√°√à√¶√ä √ö√ë√à√≠ √¶ √ì√≠√ä√£ √á√ñ√á√ù√• √á√°√°√õ√• √á√°√§√ü√°√≠√í√≠√â
 ? ?????????????????? ? 
-???«Ê«„— ⁄«„…???
+???√á√¶√á√£√ë √ö√á√£√â???
                         
-??^^server ?„⁄·Ê„«  ⁄‰ «·”Ì—›—?                      
-??^^servers ?⁄·‘«‰  ‘Ê› «·»Ê  »ﬂ„ ”Ì—›— «Ê‰ ·«Ì‰ ?  
-??^^bot ?·„⁄—› «·»Ê  »ﬂ„ ”Ì—›—?
-??^^date ?·„⁄—›Â «· «—ÌŒ?
-??^^ping ?·„⁄—›Â ”—⁄Â «·»Ê ?
-??^^members ?„⁄·Ê„«  ⁄‰ «·«⁄÷«¡?
-??^^embed ?Œ«’ÌÂ €—œ ·ﬂ‰ »€Ì— ÿ—ÌﬁÂ?
-??^^say ?·Ì Ìﬂ—— «·ﬂ·«„ «·–Ì  ﬁÊ·Â?
-??^^animal  ?ﬂÊœ ·Ì «÷Â«— ’Ê—  ··ÕÌÊ«‰« ?
+??^^server ?√£√ö√°√¶√£√á√ä √ö√§ √á√°√ì√≠√ë√ù√ë?                      
+??^^servers ?√ö√°√î√á√§ √ä√î√¶√ù √á√°√à√¶√ä √à√ü√£ √ì√≠√ë√ù√ë √á√¶√§ √°√á√≠√§ ?  
+??^^bot ?√°√£√ö√ë√ù √á√°√à√¶√ä √à√ü√£ √ì√≠√ë√ù√ë?
+??^^date ?√°√£√ö√ë√ù√• √á√°√ä√á√ë√≠√é?
+??^^ping ?√°√£√ö√ë√ù√• √ì√ë√ö√• √á√°√à√¶√ä?
+??^^members ?√£√ö√°√¶√£√á√ä √ö√§ √á√°√á√ö√ñ√á√Å?
+??^^embed ?√é√á√ï√≠√• √õ√ë√è √°√ü√§ √à√õ√≠√ë √ò√ë√≠√û√•?
+??^^say ?√°√≠ √≠√ü√ë√ë √á√°√ü√°√á√£ √á√°√ê√≠ √ä√û√¶√°√•?
+??^^animal  ?√ü√¶√è √°√≠ √á√ñ√•√á√ë √ï√¶√ë  √°√°√ç√≠√¶√á√§√á√ä?
 ? ?????????????????? ? 
-???«Ê«„— «œ«—Ì…???
-??^^rooms ?·„⁄—›Â ⁄œœ —Ê„«  «·”Ì—›—?
-??^^ban ?· ⁄ÿÌ ‘Œ’ »«‰œ?
-??^^kick ?· ⁄ÿÌ ‘Œ’ ﬂÌﬂ?
-??^^clear ?·„”Õ «·‘«  »—ﬁ„?
-??^^edit  ?· ⁄œÌ· —”«·Â ?
-??^^ct  „‹·«ÕŸÂ: «·«”„ «‰   Œ «—Â?·Ì «‰‘«¡ —Ê„ ﬂ «»Ì?
-??^^cv  „‹·«ÕŸÂ: «·«”„ «‰   Œ «—Â?·Ì «‰‘«¡ —Ê„ ’Ê Ì?
-??^^delet  ?ﬂ‹Êœ ÌÕ–› «·‹—Ê„ ”Ê«¡ ’Ê Ì «Ê ﬂ «»Ì?
+???√á√¶√á√£√ë √á√è√á√ë√≠√â???
+??^^rooms ?√°√£√ö√ë√ù√• √ö√è√è √ë√¶√£√á√ä √á√°√ì√≠√ë√ù√ë?
+??^^ban ?√°√ä√ö√ò√≠ √î√é√ï √à√á√§√è?
+??^^kick ?√°√ä√ö√ò√≠ √î√é√ï √ü√≠√ü?
+??^^clear ?√°√£√ì√ç √á√°√î√á√ä √à√ë√û√£?
+??^^edit  ?√°√ä√ö√è√≠√° √ë√ì√á√°√• ?
+??^^ct  √£√ú√°√á√ç√ô√•: √á√°√á√ì√£ √á√§√ä √ä√é√ä√á√ë√•?√°√≠ √á√§√î√á√Å √ë√¶√£ √ü√ä√á√à√≠?
+??^^cv  √£√ú√°√á√ç√ô√•: √á√°√á√ì√£ √á√§√ä √ä√é√ä√á√ë√•?√°√≠ √á√§√î√á√Å √ë√¶√£ √ï√¶√ä√≠?
+??^^delet  ?√ü√ú√¶√è √≠√ç√ê√ù √á√°√ú√ë√¶√£ √ì√¶√á√Å √ï√¶√ä√≠ √á√¶ √ü√ä√á√à√≠?
 ? ?????????????????? ? 
-???«·ﬁ—⁄…???
-??^^roll 1   ?«·ﬁ—⁄… „‰ 1 «·Ï 25?
-??^^roll 2   ?«·ﬁ—⁄… „‰ 1 «·Ï 50?
-??^^roll 3   ?«·ﬁ—⁄… „‰ 1 «·Ï 75?
-??^^roll 4   ?«·ﬁ—⁄… „‰ 1 «·Ï 100?
+???√á√°√û√ë√ö√â???
+??^^roll 1   ?√á√°√û√ë√ö√â √£√§ 1 √á√°√¨ 25?
+??^^roll 2   ?√á√°√û√ë√ö√â √£√§ 1 √á√°√¨ 50?
+??^^roll 3   ?√á√°√û√ë√ö√â √£√§ 1 √á√°√¨ 75?
+??^^roll 4   ?√á√°√û√ë√ö√â √£√§ 1 √á√°√¨ 100?
 ? ?????????????????? ? 
-???«·⁄«»???
-??^^ﬂ   ÊÌ 
-??^^„—Ì„ 
-??^^ŒÊ«ÿ— 
+???√á√°√ö√á√à???
+??^^√ü√ä √ä√¶√≠√ä
+??^^√£√ë√≠√£ 
+??^^√é√¶√á√ò√ë 
 ? ?????????????????? ? 
-???«Ê«„— «·’Ê—???
-??^^avatar ?·Ì ⁄—÷ ’Ê— ﬂ «Ê ’Ê—Â «Ì ‘Œ’?
-??^^image ?·Ì ⁄—÷ ’Ê—Â «·”Ì—›—?
-??ﬁ—Ì»«
+???√á√¶√á√£√ë √á√°√ï√¶√ë???
+??^^avatar ?√°√≠ √ö√ë√ñ √ï√¶√ë√ä√ü √á√¶ √ï√¶√ë√• √á√≠ √î√é√ï?
+??^^image ?√°√≠ √ö√ë√ñ √ï√¶√ë√• √á√°√ì√≠√ë√ù√ë?
+??√û√ë√≠√à√á
 ? ?????????????????? ? 
-???«‰Ê«⁄ «· —ÕÌ»???
-??  —ÕÌ» 1 /  —ÕÌ» 2 
-??  —ÕÌ» 3 /  —ÕÌ» 4
-??  —ÕÌ» 5 /  —ÕÌ» 6 
-??  —ÕÌ» 7 /  —ÕÌ» 8
-??  —ÕÌ» 9 /  —ÕÌ» 10
+???√á√§√¶√á√ö √á√°√ä√ë√ç√≠√à???
+?? √ä√ë√ç√≠√à 1 / √ä√ë√ç√≠√à 2 
+?? √ä√ë√ç√≠√à 3 / √ä√ë√ç√≠√à 4
+?? √ä√ë√ç√≠√à 5 / √ä√ë√ç√≠√à 6 
+?? √ä√ë√ç√≠√à 7 / √ä√ë√ç√≠√à 8
+?? √ä√ë√ç√≠√à 9 / √ä√ë√ç√≠√à 10
 ? ?????????????????? ? 
-???«·œ⁄„ «·›‰Ì Ê«·„”«⁄œ…???
-^^invite | «·ﬁ”„ «·«Ê· ·Ì «÷«›Â «·»Ê  
-^^support| «·ﬁ”„ «·À«‰Ì  «·œ⁄„ «·›‰Ì Ê «·„”«⁄œ…
-«·ﬁ”„ «·À«·À „’„„ «·»Ê  | @Õ‹?????”Ê‰Ì ¬≈·⁄—¬≈ﬁ‹?????Ì#7725 
+???√á√°√è√ö√£ √á√°√ù√§√≠ √¶√á√°√£√ì√á√ö√è√â???
+^^invite | √á√°√û√ì√£ √á√°√á√¶√° √°√≠ √á√ñ√á√ù√• √á√°√à√¶√ä 
+^^support| √á√°√û√ì√£ √á√°√ã√á√§√≠  √á√°√è√ö√£ √á√°√ù√§√≠ √¶ √á√°√£√ì√á√ö√è√â
+√á√°√û√ì√£ √á√°√ã√á√°√ã √£√ï√£√£ √á√°√à√¶√ä | @√ç√ú?????√ì√¶√§√≠ √Ç√Ö√°√ö√ë√Ç√Ö√û√ú?????√≠#7725 
 ? ?????????????????? ? 
 `)
 
@@ -234,9 +234,9 @@ client.on('message', function(message) {
     if(message.content ===  'Lcolor 50') {
         if(message.member.hasPermission('MANAGE_ROLES')) {
             setInterval(function(){})
-            message.channel.send('Ã«—Ì ⁄„· «·«·Ê«‰ |?')
+            message.channel.send('√å√á√ë√≠ √ö√£√° √á√°√á√°√¶√á√§ |?')
         }else{
-            message.channel.send('„« „⁄«ﬂ «·»—„‘‰ «·„ÿ·Ê»  |?')
+            message.channel.send('√£√á √£√ö√á√ü √á√°√à√ë√£√î√§ √á√°√£√ò√°√¶√à  |?')
             }
     }
 });
@@ -262,9 +262,9 @@ client.on('message', function(message) {
     if(message.content ===  'Lcolor 100') {
         if(message.member.hasPermission('MANAGE_ROLES')) {
             setInterval(function(){})
-            message.channel.send('Ã«—Ì ⁄„· «·«·Ê«‰ |?')
+            message.channel.send('√å√á√ë√≠ √ö√£√° √á√°√á√°√¶√á√§ |?')
         }else{
-            message.channel.send('„« „⁄«ﬂ «·»—„‘‰ «·„ÿ·Ê»  |?')
+            message.channel.send('√£√á √£√ö√á√ü √á√°√à√ë√£√î√§ √á√°√£√ò√°√¶√à  |?')
             }
     }
 });
@@ -290,9 +290,9 @@ client.on('message', function(message) {
     if(message.content ===  'Lcolor 140') {
         if(message.member.hasPermission('MANAGE_ROLES')) {
             setInterval(function(){})
-            message.channel.send('Ã«—Ì ⁄„· «·«·Ê«‰ |?')
+            message.channel.send('√å√á√ë√≠ √ö√£√° √á√°√á√°√¶√á√§ |?')
         }else{
-            message.channel.send('„« „⁄«ﬂ «·»—„‘‰ «·„ÿ·Ê»  |?')
+            message.channel.send('√£√á √£√ö√á√ü √á√°√à√ë√£√î√§ √á√°√£√ò√°√¶√à  |?')
             }
     }
 });
@@ -318,7 +318,7 @@ client.on('message', message=>{
     if (message.content.startsWith('Lkick')) {
         var member= message.mentions.members.first();
         member.kick().then((member) => {
-            message.channel.send(member.displayName + '  „ ÿ—œ Â–« «·‘Œ’ „‰ «·”Ì—›—');
+            message.channel.send(member.displayName + ' √ä√£ √ò√ë√è √•√ê√á √á√°√î√é√ï √£√§ √á√°√ì√≠√ë√ù√ë');
         }).catch(() => {
             message.channel.send(":x:");
         });
@@ -329,10 +329,10 @@ client.on('message', message=>{
 
 client.on('message', (message) => {
     if (message.content.startsWith('Lban ')) {
-      if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('Â–« «·Œ«’Ì… ··œ«—… ›ﬁÿ');
+      if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('√•√ê√á √á√°√é√á√ï√≠√â √°√°√è√á√ë√â √ù√û√ò');
         var member= message.mentions.members.first();
         member.ban().then((member) => {
-         message.channel.send(member.displayName + ' „ ÿ—œ Â–« «·‘Œ’ „‰ «·”Ì—›—');
+         message.channel.send(member.displayName + '√ä√£ √ò√ë√è √•√ê√á √á√°√î√é√ï √£√§ √á√°√ì√≠√ë√ù√ë');
         }).catch(() => {
             message.channel.send('Error :_:');
         });
@@ -352,15 +352,15 @@ client.on('message', message => {
          .setColor('RANDOM')
          .setTimestamp()
          .setTitle(message.guild.name,message.guild.iconURL)
-         .addField(':id: «Ì œÌ «·”Ì—›—',`${message.guild.id}`,true)
-         .addField(':date: √‰‘∆  ›Ì',D3 + '.' + M2 + '.' + Y1,true)             
-         .addField(':crown: «Ê‰— «·”Ì—›—',`${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)             
-         .addField(':busts_in_silhouette: «·«⁄÷«¡ ' + ` ${message.guild.memberCount} `,'Online '+`[ ${message.guild.members.filter(m=>m.presence.status == 'online','idle','dnd').size} ]`+ ','+'Offline '+`[ ${message.guild.members.filter(m=>m.presence.status == 'offline').size} ]`,true)
-         .addField(':speech_balloon: ﬁ‰Ê« ' +' '+message.guild.channels.size+' ',`Text [ ${message.guild.channels.filter(m => m.type === 'text').size} ]`+', '+`Voice [ ${message.guild.channels.filter(m => m.type === 'voice').size} ]`,true)
-         .addField(':earth_asia: «·œÊ·Â',message.guild.region)
-         .addField(':ribbon: «Ì„ÊÃÌ «·”Ì—›—',`${message.guild.emojis.size}`,true)
-         .addField(':construction: „” ÊÏ «· Õﬁﬁ',`${verificationLevels[message.guild.verificationLevel]}`,true)
-         .addField(':closed_lock_with_key: «·— »  '+message.guild.roles.size+' ','Type `.roles` To See The Server Roles!')
+         .addField(':id: √á√≠ √è√≠ √á√°√ì√≠√ë√ù√ë',`${message.guild.id}`,true)
+         .addField(':date: √É√§√î√Ü√ä √ù√≠',D3 + '.' + M2 + '.' + Y1,true)             
+         .addField(':crown: √á√¶√§√ë √á√°√ì√≠√ë√ù√ë',`${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)             
+         .addField(':busts_in_silhouette: √á√°√á√ö√ñ√á√Å ' + ` ${message.guild.memberCount} `,'Online '+`[ ${message.guild.members.filter(m=>m.presence.status == 'online','idle','dnd').size} ]`+ ','+'Offline '+`[ ${message.guild.members.filter(m=>m.presence.status == 'offline').size} ]`,true)
+         .addField(':speech_balloon: √û√§√¶√á√ä' +' '+message.guild.channels.size+' ',`Text [ ${message.guild.channels.filter(m => m.type === 'text').size} ]`+', '+`Voice [ ${message.guild.channels.filter(m => m.type === 'voice').size} ]`,true)
+         .addField(':earth_asia: √á√°√è√¶√°√•',message.guild.region)
+         .addField(':ribbon: √á√≠√£√¶√å√≠ √á√°√ì√≠√ë√ù√ë',`${message.guild.emojis.size}`,true)
+         .addField(':construction: √£√ì√ä√¶√¨ √á√°√ä√ç√û√û',`${verificationLevels[message.guild.verificationLevel]}`,true)
+         .addField(':closed_lock_with_key: √á√°√ë√ä√à  '+message.guild.roles.size+' ','Type `.roles` To See The Server Roles!')
          message.channel.send({embed:xNiTRoZ});
      }
     });
@@ -383,8 +383,8 @@ message.channel.sendEmbed(embed);
 
 client.on('message', message => {
 if (message.content === "Lhelp") {
-message.reply("**Done |  ‹‹„**")
-message.reply("** „ «—”«· «Ê«„— «·»Ê  ›Ì «·Œ«’**")
+message.reply("**Done | √ä√ú√ú√£**")
+message.reply("**√ä√£ √á√ë√ì√á√° √á√¶√á√£√ë √á√°√à√¶√ä √ù√≠ √á√°√é√á√ï**")
 message.react("??")
 
 }
@@ -395,7 +395,7 @@ client.on('message', message => {
     if(message.content.includes('discord.gg')){
       if(!message.member.hasPermission('ADMINISTRATOR'))
         message.delete()
-    return message.reply(`** Ì„‰⁄ ‰‘— «·—Ê«»ÿ ! **`)
+    return message.reply(`** √≠√£√§√ö √§√î√ë √á√°√ë√¶√á√à√ò ! **`)
     }
 });
 
@@ -407,14 +407,14 @@ Lid") {
      let embed = new Discord.RichEmbed()
   .setThumbnail(message.author.avatarURL)  
   .setAuthor(message.author.username)
-.setDescription("„⁄·Ê„«  ⁄‰ «·Õ‹‹”«»")
+.setDescription("√£√ö√°√¶√£√á√ä √ö√§ √á√°√ç√ú√ú√ì√á√à")
                .setFooter(`Desert Bot.`, '')
   .setColor("#9B59B6")
-  .addField("«”‹‹‹„ «·Õ”‹‹«»", `${message.author.username}`)
-  .addField('ﬂÊœ «·Õ”«» «·Œ«’', message.author.discriminator)
-  .addField("«·—ﬁ‹‹‹„ «·‘‹‹‹Œ’Ì", message.author.id)
-  .addField('»‹‹‹‹Ê ', message.author.bot)
-  .addField(" «—ÌŒ «· ”ÃÌ·", message.author.createdAt)
+  .addField("√á√ì√ú√ú√ú√£ √á√°√ç√ì√ú√ú√á√à", `${message.author.username}`)
+  .addField('√ü√¶√è √á√°√ç√ì√á√à √á√°√é√á√ï', message.author.discriminator)
+  .addField("√á√°√ë√û√ú√ú√ú√£ √á√°√î√ú√ú√ú√é√ï√≠", message.author.id)
+  .addField('√à√ú√ú√ú√ú√¶√ä', message.author.bot)
+  .addField("√ä√á√ë√≠√é √á√°√ä√ì√å√≠√°", message.author.createdAt)
      
      
   message.channel.sendEmbed(embed);
@@ -431,11 +431,11 @@ client.on('message', message => {
 if (message.content === 'Lhelp') {
          let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)    
-      .addField("** ?? «Ê«„— «·„ÌÊ“ﬂ**","** **")
-      .addField("***play :musical_note:**","**·‹  ‘€Ì· «·„ÿ·Ê»**")
-      .addField("***stop  :musical_keyboard:**","**·‹ «Ìﬁ«› «·„ÿ·Ê»**")
-      .addField("***pause :musical_score:**","**·‹ «Ìﬁ«› «·„ÿÊ» „ƒﬁ **")
-      .addField("***resume :mute: **","**·‹  ‘€Ì· «·„ÿÊ» »⁄œ «· ÊﬁÌ›**")
+      .addField("** ?? √á√¶√á√£√ë √á√°√£√≠√¶√í√ü**","** **")
+      .addField("***play :musical_note:**","**√°√ú √ä√î√õ√≠√° √á√°√£√ò√°√¶√à**")
+      .addField("***stop  :musical_keyboard:**","**√°√ú √á√≠√û√á√ù √á√°√£√ò√°√¶√à**")
+      .addField("***pause :musical_score:**","**√°√ú √á√≠√û√á√ù √á√°√£√ò√¶√à √£√Ñ√û√ä**")
+      .addField("***resume :mute: **","**√°√ú √ä√î√õ√≠√° √á√°√£√ò√¶√à √à√ö√è √á√°√ä√¶√û√≠√ù**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
@@ -451,12 +451,12 @@ client.on('message', message => {
 if (message.content === 'Lhelp') {
          let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)    
-      .addField("**:radioactive: √Ê«„— «·√œ«—Â**","** **")
-      .addField("***bc  :mega:**","**·‹ «·»—Êœﬂ«” **")
-      .addField("***clear :octagonal_sign:**","**·‹ „”Õ «·‘« **")
-	  .addField("***createcolors :cyclone:**","** ·‹ «÷«›… 110 ·Ê‰**")
-      .addField("***kick  :outbox_tray:**","**·‹ ÿ—œ «·√⁄÷«¡**")
-      .addField("***ban  :no_entry:**","**·‹ ÕŸ— «·√⁄÷«¡**")
+      .addField("**:radioactive: √É√¶√á√£√ë √á√°√É√è√á√ë√•**","** **")
+      .addField("***bc  :mega:**","**√°√ú √á√°√à√ë√¶√è√ü√á√ì√ä**")
+      .addField("***clear :octagonal_sign:**","**√°√ú √£√ì√ç √á√°√î√á√ä**")
+	  .addField("***createcolors :cyclone:**","** √°√ú √á√ñ√á√ù√â 110 √°√¶√§**")
+      .addField("***kick  :outbox_tray:**","**√°√ú √ò√ë√è √á√°√É√ö√ñ√á√Å**")
+      .addField("***ban  :no_entry:**","**√°√ú √ç√ô√ë √á√°√É√ö√ñ√á√Å**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
@@ -472,16 +472,16 @@ client.on('message', message => {
 if (message.content === 'Lhelp') {
          let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)    
-      .addField("**:globe_with_meridians: «·√Ê«„— «·⁄«„Â**","** **")
-      .addField("***ping :stopwatch:**","**·‹ ”—⁄… ≈ ’«·ﬂ**")
-      .addField("***id :chart_with_downwards_trend:**","**⁄—÷ ”—⁄Â « ’«· «·»Ê **")
-      .addField("***avatar :camping:**","**·‹ ’Ê— «·‘Œ’ «·„Œ «—**")
-      .addField("***roll :1234:**","**·‹ «·ﬁ—⁄Â „‰ 1 - 100**")
-      .addField("***server :recycle:**","**·‹ „⁄·Ê„«  «·”Ì—›—**")
-      .addField("***roles :medal: **","**„”Õ „Õ«œÀ«  «·‘« **")
-      .addField("***say :arrows_counterclockwise:**","**·‹ Ìﬂ—— «·ﬂ·«„ «··Ï  ﬁÊ·Â**")
-      .addField("***time :alarm_clock:**","**·‹ „⁄—›… «·”«⁄…**")
-      .addField("***date **","**·‹ „⁄—›… «· «—ÌŒ**")
+      .addField("**:globe_with_meridians: √á√°√É√¶√á√£√ë √á√°√ö√á√£√•**","** **")
+      .addField("***ping :stopwatch:**","**√°√ú √ì√ë√ö√â √Ö√ä√ï√á√°√ü**")
+      .addField("***id :chart_with_downwards_trend:**","**√ö√ë√ñ √ì√ë√ö√• √á√ä√ï√á√° √á√°√à√¶√ä**")
+      .addField("***avatar :camping:**","**√°√ú √ï√¶√ë √á√°√î√é√ï √á√°√£√é√ä√á√ë**")
+      .addField("***roll :1234:**","**√°√ú √á√°√û√ë√ö√• √£√§ 1 - 100**")
+      .addField("***server :recycle:**","**√°√ú √£√ö√°√¶√£√á√ä √á√°√ì√≠√ë√ù√ë**")
+      .addField("***roles :medal: **","**√£√ì√ç √£√ç√á√è√ã√á√ä √á√°√î√á√ä**")
+      .addField("***say :arrows_counterclockwise:**","**√°√ú √≠√ü√ë√ë √á√°√ü√°√á√£ √á√°√°√¨ √ä√û√¶√°√•**")
+      .addField("***time :alarm_clock:**","**√°√ú √£√ö√ë√ù√â √á√°√ì√á√ö√â**")
+      .addField("***date **","**√°√ú √£√ö√ë√ù√â √á√°√ä√á√ë√≠√é**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
@@ -497,13 +497,13 @@ client.on('guildMemberAdd', member => {
         .setColor('PURPLE')
         .setThumbnail(memberavatar)
         .addField('?? | name :  ',`${member}`)
-        .addField('?? | «ÿ·ﬁ „‰ œŒ·' , `Welcome to the server, ${member}`)
+        .addField('?? | √á√ò√°√û √£√§ √è√é√°' , `Welcome to the server, ${member}`)
         .addField('?? | user :', "**[" + `${member.id}` + "]**" )
-                .addField('?| «‰  «·⁄÷Ê —ﬁ„',`${member.guild.memberCount}`)
+                .addField('?| √á√§√ä √á√°√ö√ñ√¶ √ë√û√£',`${member.guild.memberCount}`)
                
                   .addField("Name:",`<@` + `${member.id}` + `>`, true)
                      
-                                     .addField(' «·‹”Ì—›—', `${member.guild.name}`,true)
+                                     .addField(' √á√°√ú√ì√≠√ë√ù√ë', `${member.guild.name}`,true)
                                        
      .setFooter(`${member.guild.name}`)
         .setTimestamp()
@@ -515,11 +515,11 @@ client.on('guildMemberAdd', member => {
         var embed = new Discord.RichEmbed()
         .setAuthor(member.user.username, member.user.avatarURL)
         .setThumbnail(member.user.avatarURL)
-        .setTitle(`»” »⁄—› ÊÌ‰ —Õ øøø :raised_hand::skin-tone-1: :pensive:`)
-        .setDescription(`„⁄ «·”·«„Â  ‘—›‰« »ﬂ :raised_hand::skin-tone-1: :pensive: `)
-        .addField('??    »ﬁÌ',`**[ ${member.guild.memberCount} ]**`,true)
+        .setTitle(`√à√ì √à√ö√ë√ù √¶√≠√§ √ë√ç√ä¬ø¬ø¬ø :raised_hand::skin-tone-1: :pensive:`)
+        .setDescription(`√£√ö √á√°√ì√°√á√£√• √ä√î√ë√ù√§√á √à√ü :raised_hand::skin-tone-1: :pensive: `)
+        .addField('??   √ä√à√û√≠',`**[ ${member.guild.memberCount} ]**`,true)
         .setColor('PURPLE')
-        .setFooter(`====«Â·« «·”Ì—›— ‰Ê— »Ìﬂ Ê «··Â====`, 'https://cdn.discordapp.com/attachments/397818254439219217/399292026782351381/shy.png')
+        .setFooter(`====√á√•√°√á √á√°√ì√≠√ë√ù√ë √§√¶√ë √à√≠√ü √¶ √á√°√°√•====`, 'https://cdn.discordapp.com/attachments/397818254439219217/399292026782351381/shy.png')
    
     var channel =member.guild.channels.find('name', 'welcome')
     if (!channel) return;
@@ -545,10 +545,10 @@ client.on('message', message => {
   if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.reply("**I Don't Have ` KICK_MEMBERS ` Permission**");
   let user = message.mentions.users.first();
   let reason = message.content.split(" ").slice(2).join(" ");
-  if (message.mentions.users.size < 1) return message.reply("**„‰‘‰ ‘Œ’**");
-  if(!reason) return message.reply ("**«ﬂ » ”»» «·ÿ—œ**");
+  if (message.mentions.users.size < 1) return message.reply("**√£√§√î√§ √î√é√ï**");
+  if(!reason) return message.reply ("**√á√ü√ä√à √ì√à√à √á√°√ò√ë√è**");
   if (!message.guild.member(user)
-  .kickable) return message.reply("**·«Ì„ﬂ‰‰Ì ÿ—œ ‘Œ’ «⁄·Ï „‰ — » Ì Ì—ÃÂ «⁄ÿ«¡ «·»Ê  — »Â ⁄«·Ì**");
+  .kickable) return message.reply("**√°√á√≠√£√ü√§√§√≠ √ò√ë√è √î√é√ï √á√ö√°√¨ √£√§ √ë√ä√à√ä√≠ √≠√ë√å√• √á√ö√ò√á√Å √á√°√à√¶√ä √ë√ä√à√• √ö√á√°√≠**");
  
   message.guild.member(user).kick();
  
@@ -556,8 +556,8 @@ client.on('message', message => {
   .setAuthor(`KICKED!`, user.displayAvatarURL)
   .setColor("PURPLE")
   .setTimestamp()
-  .addField("**«¡  „ «⁄ÿ« ÿ—œ ·Ì:**",  '**[ ' + `${user.tag}` + ' ]**')
-  .addField("**»Ê«”ÿ…:**", '**[ ' + `${message.author.tag}` + ' ]**')
+  .addField("**√á√Å √ä√£ √á√ö√ò√á √ò√ë√è √°√≠:**",  '**[ ' + `${user.tag}` + ' ]**')
+  .addField("**√à√¶√á√ì√ò√â:**", '**[ ' + `${message.author.tag}` + ' ]**')
   .addField("**Reason:**", '**[ ' + `${reason}` + ' ]**')
   message.channel.send({
     embed : kickembed
@@ -585,10 +585,10 @@ client.on('message', message => {
   let reason = message.content.split(" ").slice(2).join(" ");
   /*let b5bzlog = client.channels.find("name", "5bz-log");
   if(!b5bzlog) return message.reply("I've detected that this server doesn't have a 5bz-log text channel.");*/
-  if (message.mentions.users.size < 1) return message.reply("**„‰‘‰ ‘Œ’**");
-  if(!reason) return message.reply ("**«ﬂ » ”»» «·ÿ—œ**");
+  if (message.mentions.users.size < 1) return message.reply("**√£√§√î√§ √î√é√ï**");
+  if(!reason) return message.reply ("**√á√ü√ä√à √ì√à√à √á√°√ò√ë√è**");
   if (!message.guild.member(user)
-  .bannable) return message.reply("**·«Ì„ﬂ‰‰Ì ÿ—œ ‘Œ’ «⁄·Ï „‰ — » Ì Ì—ÃÂ «⁄ÿ«¡ «·»Ê  — »Â ⁄«·Ì**");
+  .bannable) return message.reply("**√°√á√≠√£√ü√§√§√≠ √ò√ë√è √î√é√ï √á√ö√°√¨ √£√§ √ë√ä√à√ä√≠ √≠√ë√å√• √á√ö√ò√á√Å √á√°√à√¶√ä √ë√ä√à√• √ö√á√°√≠**");
  
   message.guild.member(user).ban(7, user);
  
@@ -612,20 +612,20 @@ client.on('message', message => {
     var reason = message.content.split(' ').slice(2).join(' ');
     if(message.content.startsWith(prefix + 'report')) {
         if(message.author.bot) return;
-        if(!message.guild.channels.find('name', 'report')) return message.channel.send('**‰—ÃÊ ⁄„· —Ê„ »«”„ report**').then(msg => msg.delete(5000));
-    if(!name1) return message.reply('**:innocent:„‰‘‰:innocent:**').then(msg => msg.delete(3000))
+        if(!message.guild.channels.find('name', 'report')) return message.channel.send('**√§√ë√å√¶ √ö√£√° √ë√¶√£ √à√á√ì√£ report**').then(msg => msg.delete(5000));
+    if(!name1) return message.reply('**:innocent:√£√§√î√§:innocent:**').then(msg => msg.delete(3000))
         message.delete();
-    if(!reason) return message.reply('**:innocent:Ê‘ ”ÊÏø:innocent:**').then(msg => msg.delete(3000))
+    if(!reason) return message.reply('**:innocent:√¶√î √ì√¶√¨¬ø:innocent:**').then(msg => msg.delete(3000))
         message.delete();
     var abod = new Discord.RichEmbed()
-    .setTitle(`»·«€ „‰ ﬁ»·: ${message.author.tag}`)
-    .addField('**«·„Ã—„:**', `${name1}`, true)
-    .addField('**»—Ê„:**', `${message.channel.name}`, true)
-    .addField('**«·»·«€:**', `${reason}`, true)
+    .setTitle(`√à√°√á√õ √£√§ √û√à√°: ${message.author.tag}`)
+    .addField('**√á√°√£√å√ë√£:**', `${name1}`, true)
+    .addField('**√à√ë√¶√£:**', `${message.channel.name}`, true)
+    .addField('**√á√°√à√°√á√õ:**', `${reason}`, true)
     .setFooter(`${message.author.username}#${message.author.discriminator}`, message.author.avatarURL)
     .setTimestamp()
         message.guild.channels.find('name', 'report').sendEmbed(abod)
-    message.reply('**:sunglasses:»‰√Œ– Õﬁﬂ:sunglasses:**').then(msg => msg.delete(3000));
+    message.reply('**:sunglasses:√à√§√É√é√ê √ç√û√ü:sunglasses:**').then(msg => msg.delete(3000));
     }
 });
 
@@ -640,13 +640,13 @@ client.on("message", message => {
              Please Chose:
  
              
-${prefix}help-public ? «Ê«„— ⁄«„…
+${prefix}help-public ? √á√¶√á√£√ë √ö√á√£√â
  
-${prefix}help-admin ? «Ê«„— «œ«—… «·”Ì—›—
+${prefix}help-admin ? √á√¶√á√£√ë √á√è√á√ë√â √á√°√ì√≠√ë√ù√ë
              
-${prefix}help-games ? «Ê«„— «·«·⁄«»
+${prefix}help-games ? √á√¶√á√£√ë √á√°√á√°√ö√á√à
  
-${prefix}help-music ? «Ê«„— «·„Ê”ÌﬁÏ
+${prefix}help-music ? √á√¶√á√£√ë √á√°√£√¶√ì√≠√û√¨
  
       `)
    message.channel.sendEmbed(embed)
@@ -658,39 +658,39 @@ ${prefix}help-music ? «Ê«„— «·„Ê”ÌﬁÏ
 client.on("message", message => {
     var prefix = "-";
  if (message.content === "-help-public") {
-     message.channel.send('** „ «—”«·ﬂ ›Ì «·Œ«’** :mailbox_with_mail: ');
+     message.channel.send('**√ä√£ √á√ë√ì√á√°√ü √ù√≠ √á√°√é√á√ï** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed()
       .setColor("#000000")
       .setDescription(`
-              «Ê«„— ⁄«„…
-?-allbots ~ ·⁄—÷ Ã„Ì⁄ «·»Ê «  «·Ì »«·”Ì—›—
-?-server ~Ì⁄—÷ ·ﬂ „⁄·Ê„«  ⁄‰ «·”Ì—›—
-?-bot ~ Ì⁄—÷ ·ﬂ ﬂ· „⁄·Ê„«  «·»Ê 
-?-skin <name> ~ Ì⁄—÷ ·ﬂ ”ﬂ‰ﬂ »„«Ì‰ ﬂ—«› 
-?-count ~ Ì⁄—÷ ·ﬂ ⁄œœ «·«‘Œ«’ »«·”Ì—›— »œÊ‰ »Ê « 
-?-invites ~ Ì⁄—÷ ·ﬂ  ⁄œœ «‰›«Ì « ﬂ »«·”Ì—›—
-?-invite-codes ~ Ì⁄—÷ ·ﬂ —Ê«»ÿ «·«‰›«Ì «  Õﬂﬂ ›Ì «·”Ì—›—
-?-cal ~ «·Â Õ«”»…
-?-trans <language> <any thing> ~ Ì —Ã„ ·ﬂ «·Ì  »ÌÂ „‰ «Ì ·€…
-?-short ~ ÌŒ ’— ·ﬂ —«»ÿ ﬂ»Ì— «·Ï —«»ÿ ’€Ì—
-?-tag ~ Ìﬂ » ·ﬂ «·ﬂ·„… »‘ﬂ· Ã„Ì· Êﬂ»Ì—
-?-google ~ ··»ÕÀ ›Ì ﬁÊﬁ· ⁄‰ ÿ—Ìﬁ «·œ”ﬂÊ—œ
-?-perms ~ Ì⁄—÷ ·ﬂ »—„‘‰« ﬂ »«·”Ì—›—
-?-za5 ~ Ì“Œ—› ·ﬂ ﬂ·„… «Ê Ã„·…
-?-rooms ~ Ì⁄—÷ ·ﬂ ﬂ· «·—Ê„«  «·Ì »«·”Ì—›— „⁄ ⁄œœÂ«
-?-roles ~ Ì⁄—÷ ·ﬂ ﬂ· «·—«‰ﬂ«  »«·”Ì—›— »‘ﬂ· Ã„Ì·
-?-emojilist ~ Ì⁄—÷ ·ﬂ ﬂ· «·«Ì„ÊÃÌ«  «·Ì »«·”Ì—›—
-?-say ~ Ìﬂ—— «·ﬂ·«„ «·Ì  ﬂ »Ê
-?-image ~ ’Ê—… «·”Ì—›—
-?-members ~ Ì⁄—÷ ·ﬂ ⁄œœ ﬂ· Õ«·«  «·«‘Œ«’ Ê⁄œœ «·»Ê «  Ê⁄œœ «·«‘Œ«’
-?-id ~ „⁄·Ê„«  ⁄‰ﬂ
-?-bans ~ ⁄œœ «·«‘Œ«’ «·„»‰œ…
-?-avatar ~ ’Ê— ﬂ «Ê ’Ê—… «·Ì  „‰‘‰Ê
-?-embed ~ Ìﬂ—— «·Ì  ﬁÊ·Ê »‘ﬂ· Õ·Ê
-?-emoji <any things> ~ · ÕÊÌ· «Ì ﬂ·„Â  ﬁÊ·Â« «·Ì «Ì„ÊÃÌ
-?-inv ~ ·œ⁄Ê… «·»Ê  «·Ï ”Ì—›—ﬂ
-?-support ~ ”Ì—›— «·œ⁄„
-?-contact ~ «—”«· «ﬁ —«Õ «Ê ·„—«”·… ’«Õ» «·»Ê 
+              √á√¶√á√£√ë √ö√á√£√â
+?-allbots ~ √°√ö√ë√ñ √å√£√≠√ö √á√°√à√¶√ä√á√ä √á√°√≠ √à√á√°√ì√≠√ë√ù√ë
+?-server ~√≠√ö√ë√ñ √°√ü √£√ö√°√¶√£√á√ä √ö√§ √á√°√ì√≠√ë√ù√ë
+?-bot ~ √≠√ö√ë√ñ √°√ü √ü√° √£√ö√°√¶√£√á√ä √á√°√à√¶√ä
+?-skin <name> ~ √≠√ö√ë√ñ √°√ü √ì√ü√§√ü √à√£√á√≠√§ √ü√ë√á√ù√ä
+?-count ~ √≠√ö√ë√ñ √°√ü √ö√è√è √á√°√á√î√é√á√ï √à√á√°√ì√≠√ë√ù√ë √à√è√¶√§ √à√¶√ä√á√ä
+?-invites ~ √≠√ö√ë√ñ √°√ü  √ö√è√è √á√§√ù√á√≠√ä√á√ä√ü √à√á√°√ì√≠√ë√ù√ë
+?-invite-codes ~ √≠√ö√ë√ñ √°√ü √ë√¶√á√à√ò √á√°√á√§√ù√á√≠√ä√á√ä √ç√ü√ü √ù√≠ √á√°√ì√≠√ë√ù√ë
+?-cal ~ √á√°√• √ç√á√ì√à√â
+?-trans <language> <any thing> ~ √≠√ä√ë√å√£ √°√ü √á√°√≠ √ä√à√≠√• √£√§ √á√≠ √°√õ√â
+?-short ~ √≠√é√ä√ï√ë √°√ü √ë√á√à√ò √ü√à√≠√ë √á√°√¨ √ë√á√à√ò √ï√õ√≠√ë
+?-tag ~ √≠√ü√ä√à √°√ü √á√°√ü√°√£√â √à√î√ü√° √å√£√≠√° √¶√ü√à√≠√ë
+?-google ~ √°√°√à√ç√ã √ù√≠ √û√¶√û√° √ö√§ √ò√ë√≠√û √á√°√è√ì√ü√¶√ë√è
+?-perms ~ √≠√ö√ë√ñ √°√ü √à√ë√£√î√§√á√ä√ü √à√á√°√ì√≠√ë√ù√ë
+?-za5 ~ √≠√í√é√ë√ù √°√ü √ü√°√£√â √á√¶ √å√£√°√â
+?-rooms ~ √≠√ö√ë√ñ √°√ü √ü√° √á√°√ë√¶√£√á√ä √á√°√≠ √à√á√°√ì√≠√ë√ù√ë √£√ö √ö√è√è√•√á
+?-roles ~ √≠√ö√ë√ñ √°√ü √ü√° √á√°√ë√á√§√ü√á√ä √à√á√°√ì√≠√ë√ù√ë √à√î√ü√° √å√£√≠√°
+?-emojilist ~ √≠√ö√ë√ñ √°√ü √ü√° √á√°√á√≠√£√¶√å√≠√á√ä √á√°√≠ √à√á√°√ì√≠√ë√ù√ë
+?-say ~ √≠√ü√ë√ë √á√°√ü√°√á√£ √á√°√≠ √ä√ü√ä√à√¶
+?-image ~ √ï√¶√ë√â √á√°√ì√≠√ë√ù√ë
+?-members ~ √≠√ö√ë√ñ √°√ü √ö√è√è √ü√° √ç√á√°√á√ä √á√°√á√î√é√á√ï √¶√ö√è√è √á√°√à√¶√ä√á√ä √¶√ö√è√è √á√°√á√î√é√á√ï
+?-id ~ √£√ö√°√¶√£√á√ä √ö√§√ü
+?-bans ~ √ö√è√è √á√°√á√î√é√á√ï √á√°√£√à√§√è√â
+?-avatar ~ √ï√¶√ë√ä√ü √á√¶ √ï√¶√ë√â √á√°√≠ √ä√£√§√î√§√¶
+?-embed ~ √≠√ü√ë√ë √á√°√≠ √ä√û√¶√°√¶ √à√î√ü√° √ç√°√¶
+?-emoji <any things> ~ √°√ä√ç√¶√≠√° √á√≠ √ü√°√£√• √ä√û√¶√°√•√á √á√°√≠ √á√≠√£√¶√å√≠
+?-inv ~ √°√è√ö√¶√â √á√°√à√¶√ä √á√°√¨ √ì√≠√ë√ù√ë√ü
+?-support ~ √ì√≠√ë√ù√ë √á√°√è√ö√£
+?-contact ~ √á√ë√ì√á√° √á√û√ä√ë√á√ç √á√¶ √°√£√ë√á√ì√°√â √ï√á√ç√à √á√°√à√¶√ä
 `)
    message.author.sendEmbed(embed)
    
@@ -700,34 +700,34 @@ client.on("message", message => {
    client.on("message", message => {
     var prefix = "-";
  if (message.content === "-help-admin") {
-      message.channel.send('** „ «—”«·ﬂ ›Ì «·Œ«’** :mailbox_with_mail: ');
+      message.channel.send('**√ä√£ √á√ë√ì√á√°√ü √ù√≠ √á√°√é√á√ï** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed()
       .setColor("#000000")
       .setDescription(`
-          «Ê«„— «œ«—… «·”Ì—›—
-?-move @user ~  ·”Õ» «·‘Œ’ «·Ï —ÊÊ„ﬂ
-?-bc ~ —”«·… Ã„«⁄Ì… «·Ï ﬂ· «⁄÷«¡ «·”Ì—›—
-?-role @user <rank> ~ ·√⁄ÿ«¡ — »… ·⁄÷Ê „⁄Ì‰
-?-roleremove @user <rank> ~ ·«“«·… «·— »… „‰ ‘Œ’ „⁄Ì‰
-?-role all <rank> ~ ·√⁄ÿ«¡ — »… ··Ã„Ì⁄
-?-role humans <rank> ~ ·√⁄ÿ«¡ — »… ··«‘Œ«’ ›ﬁÿ
-?-role bots <rank> ~ ·√⁄ÿ«¡ — »… ·Ã„Ì⁄ «·»Ê « 
-?-hchannel ~ «Œ›«¡ «·‘« 
-?-schannel ~ «÷Â«— «·‘«  «·„Œ›Ì…
-?-clr <numbr> ~ „”Õ «·‘«  »⁄œœ
-?-clear ~ „”Õ «·‘« 
-?-mute @user <reason> ~ «⁄ÿ«¡ «·⁄÷Ê „ÌÊ  ·«“„ — »… <Muted>
-?-unmute @user ~ ·›ﬂ «·„ÌÊ  ⁄‰ «·‘Œ’
-?-kick @user <reason> ~ ÿ—œ «·‘Œ’ „‰ «·”Ì—›—
-?-ban @user <reason> ~ Õ÷— «·‘Œ’ „‰ «·”Ì—›—
-?-mutechannel ~  ﬁ›Ì· «·‘« 
-?-unmutechannel ~ › Õ «·‘« 
-?-dc ~ „”Õ ﬂ· «·—Ê„« 
-?-dr ~ <„”Õ ﬂ· «·—«‰ﬂ«  <·«“„  ﬂÊ‰ —«‰ﬂ «·»Ê  ›Êﬁ ﬂ· «·—«‰ﬂ« 
-?-ct <name> ~ «‰‘«¡ ‘« 
-?-cv <name> ~ «‰‘«¡ —ÊÊ„ ›ÊÌ”
-?-delet <name> ~ „”Õ «·‘«  «Ê «·—ÊÊ„ ›ÊÌ”
-?-ccolors <number> ~ Ì‰‘« ·ﬂ «·Ê«‰ „⁄ ﬂ„ «·Ê«‰  »Ì
+          √á√¶√á√£√ë √á√è√á√ë√â √á√°√ì√≠√ë√ù√ë
+?-move @user ~  √°√ì√ç√à √á√°√î√é√ï √á√°√¨ √ë√¶√¶√£√ü
+?-bc ~ √ë√ì√á√°√â √å√£√á√ö√≠√â √á√°√¨ √ü√° √á√ö√ñ√á√Å √á√°√ì√≠√ë√ù√ë
+?-role @user <rank> ~ √°√É√ö√ò√á√Å √ë√ä√à√â √°√ö√ñ√¶ √£√ö√≠√§
+?-roleremove @user <rank> ~ √°√á√í√á√°√â √á√°√ë√ä√à√â √£√§ √î√é√ï √£√ö√≠√§
+?-role all <rank> ~ √°√É√ö√ò√á√Å √ë√ä√à√â √°√°√å√£√≠√ö
+?-role humans <rank> ~ √°√É√ö√ò√á√Å √ë√ä√à√â √°√°√á√î√é√á√ï √ù√û√ò
+?-role bots <rank> ~ √°√É√ö√ò√á√Å √ë√ä√à√â √°√å√£√≠√ö √á√°√à√¶√ä√á√ä
+?-hchannel ~ √á√é√ù√á√Å √á√°√î√á√ä
+?-schannel ~ √á√ñ√•√á√ë √á√°√î√á√ä √á√°√£√é√ù√≠√â
+?-clr <numbr> ~ √£√ì√ç √á√°√î√á√ä √à√ö√è√è
+?-clear ~ √£√ì√ç √á√°√î√á√ä
+?-mute @user <reason> ~ √á√ö√ò√á√Å √á√°√ö√ñ√¶ √£√≠√¶√ä √°√á√í√£ √ë√ä√à√â <Muted>
+?-unmute @user ~ √°√ù√ü √á√°√£√≠√¶√ä √ö√§ √á√°√î√é√ï
+?-kick @user <reason> ~ √ò√ë√è √á√°√î√é√ï √£√§ √á√°√ì√≠√ë√ù√ë
+?-ban @user <reason> ~ √ç√ñ√ë √á√°√î√é√ï √£√§ √á√°√ì√≠√ë√ù√ë
+?-mutechannel ~ √ä√û√ù√≠√° √á√°√î√á√ä
+?-unmutechannel ~ √ù√ä√ç √á√°√î√á√ä
+?-dc ~ √£√ì√ç √ü√° √á√°√ë√¶√£√á√ä
+?-dr ~ <√£√ì√ç √ü√° √á√°√ë√á√§√ü√á√ä <√°√á√í√£ √ä√ü√¶√§ √ë√á√§√ü √á√°√à√¶√ä √ù√¶√û √ü√° √á√°√ë√á√§√ü√á√ä
+?-ct <name> ~ √á√§√î√á√Å √î√á√ä
+?-cv <name> ~ √á√§√î√á√Å √ë√¶√¶√£ √ù√¶√≠√ì
+?-delet <name> ~ √£√ì√ç √á√°√î√á√ä √á√¶ √á√°√ë√¶√¶√£ √ù√¶√≠√ì
+?-ccolors <number> ~ √≠√§√î√á √°√ü √á√°√¶√á√§ √£√ö √ü√£ √á√°√¶√á√§ √ä√à√≠
 `)
    message.author.sendEmbed(embed)
    
@@ -737,23 +737,23 @@ client.on("message", message => {
    client.on("message", message => {
     var prefix = "-";
  if (message.content === "-help-games") {
-      message.channel.send('** „ «—”«·ﬂ ›Ì «·Œ«’** :mailbox_with_mail: ');
+      message.channel.send('**√ä√£ √á√ë√ì√á√°√ü √ù√≠ √á√°√é√á√ï** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed()
       .setColor("#000000")
       .setDescription(`
-          «Ê«„— «·«·⁄«»
-?-rps ~ ÕÃ— Ê—ﬁ… „ﬁ’
-?-speed ~ «”—⁄ ﬂ «»…
-?-quas ~ «”∆·… ⁄«„…
-?-‰ﬂ  ~ ‰ﬂ 
-?-·⁄»… ›ﬂﬂ ~ ›ﬂﬂ
-?-⁄Ê«’„ ⁄‘Ê«∆Ì… ~ ⁄Ê«’„
-?-·⁄»… ﬂ   ÊÌ  ~ ﬂ   ÊÌ 
-?-roll <number> ~ ﬁ—⁄…
-?-·Ê ŒÌ—Êﬂ »ÿ—Ìﬁ… Õ·Ê… ~ ·Ê ŒÌ—Êﬂ
-?-·⁄»… „—Ì„ ~ „—Ì„
-?-›Ê«∆œ Ê‰’«∆Õ  ~ Â·  ⁄·„
-?-Ì⁄ÿÌﬂ ⁄ﬁ«»«  ﬁ«”Ì… ~ ⁄ﬁ«»   `)
+          √á√¶√á√£√ë √á√°√á√°√ö√á√à
+?-rps ~ √ç√å√ë √¶√ë√û√â √£√û√ï
+?-speed ~ √á√ì√ë√ö √ü√ä√á√à√â
+?-quas ~ √á√ì√Ü√°√â √ö√á√£√â
+?-√§√ü√ä ~ √§√ü√ä
+?-√°√ö√à√â √ù√ü√ü ~ √ù√ü√ü
+?-√ö√¶√á√ï√£ √ö√î√¶√á√Ü√≠√â ~ √ö√¶√á√ï√£
+?-√°√ö√à√â √ü√ä √ä√¶√≠√ä ~ √ü√ä √ä√¶√≠√ä
+?-roll <number> ~ √û√ë√ö√â
+?-√°√¶ √é√≠√ë√¶√ü √à√ò√ë√≠√û√â √ç√°√¶√â ~ √°√¶ √é√≠√ë√¶√ü
+?-√°√ö√à√â √£√ë√≠√£ ~ √£√ë√≠√£
+?-√ù√¶√á√Ü√è √¶√§√ï√á√Ü√ç  ~ √•√° √ä√ö√°√£
+?-√≠√ö√ò√≠√ü √ö√û√á√à√á√ä √û√á√ì√≠√â ~ √ö√û√á√à   `)
    message.author.sendEmbed(embed)
    
    }
@@ -762,19 +762,19 @@ client.on("message", message => {
 client.on("message", message => {
     var prefix = "-";
  if (message.content === "-help-music") {
-      message.channel.send('** „ «—”«·ﬂ ›Ì «·Œ«’** :mailbox_with_mail: ');
+      message.channel.send('**√ä√£ √á√ë√ì√á√°√ü √ù√≠ √á√°√é√á√ï** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed()
       .setColor("#000000")
       .setDescription(`
-            «Ê«„— «·„Ê”ÌﬁÏ
-?${prefix}play ~ · ‘€Ì· √€‰Ì… »—¬»ÿ √Ê »√”„
-?${prefix}skip ~ · Ã¬Ê“ «·√€‰Ì… «·Õ¬·Ì…
-?${prefix}pause ~ ≈Ìﬁ¬› «·√€‰Ì… „ƒﬁ «
-?${prefix}resume ~ ·„Ê¬’·… «·≈€‰Ì… »⁄œ ≈Ìﬁ¬›Â¬ „ƒﬁ «
-?${prefix}vol ~ · €ÌÌ— œ—Ã… «·’Ê  100 - 0
-?${prefix}stop ~ ·≈Œ—¬Ã «·»Ê  „‰ «·—Ê„
-?${prefix}np ~ ·„⁄—›… «·√€‰Ì… «·„‘€·… Õ¬·Ì«
-?${prefix}queue ~ ·„⁄—›… ﬁ¬∆„… «· ‘€Ì·
+            √á√¶√á√£√ë √á√°√£√¶√ì√≠√û√¨
+?${prefix}play ~ √°√ä√î√õ√≠√° √É√õ√§√≠√â √à√ë√Ç√à√ò √É√¶ √à√É√ì√£
+?${prefix}skip ~ √°√ä√å√Ç√¶√í √á√°√É√õ√§√≠√â √á√°√ç√Ç√°√≠√â
+?${prefix}pause ~ √Ö√≠√û√Ç√ù √á√°√É√õ√§√≠√â √£√Ñ√û√ä√á
+?${prefix}resume ~ √°√£√¶√Ç√ï√°√â √á√°√Ö√õ√§√≠√â √à√ö√è √Ö√≠√û√Ç√ù√•√Ç √£√Ñ√û√ä√á
+?${prefix}vol ~ √°√ä√õ√≠√≠√ë √è√ë√å√â √á√°√ï√¶√ä 100 - 0
+?${prefix}stop ~ √°√Ö√é√ë√Ç√å √á√°√à√¶√ä √£√§ √á√°√ë√¶√£
+?${prefix}np ~ √°√£√ö√ë√ù√â √á√°√É√õ√§√≠√â √á√°√£√î√õ√°√â √ç√Ç√°√≠√á
+?${prefix}queue ~ √°√£√ö√ë√ù√â √û√Ç√Ü√£√â √á√°√ä√î√õ√≠√°
  
  `)
    message.author.sendEmbed(embed)
