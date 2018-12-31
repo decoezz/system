@@ -16,18 +16,18 @@ client.on('message', message => {
     let args = message.content.split(' ').slice(1).join(' ');
      if(!message.channel.guild) return;
 if(message.content.split(' ')[0] == 'L') {
-         message.react("??")
+         message.react("✔️")
           let embed = new Discord.RichEmbed()
     .setColor("#FF00FF")
     .setThumbnail(message.author.avatarURL)   
-                                      .addField('Êã ÇáÇÑÓÇá ÈæÇÓØÉ :', "<@" + message.author.id + ">")
+                                      .addField('تم الارسال بواسطة :', "<@" + message.author.id + ">")
                  message.channel.sendEmbed(embed);
         message.guild.members.forEach(m => {
             var bc = new Discord.RichEmbed()
-.addField('**? Sender  :**', `*** ? ${message.author.username}#${message.author.discriminator}***`)
-            .addField('***? Server  :***', `*** ? ${message.guild.name}***`)               
+.addField('**● Sender  :**', `*** → ${message.author.username}#${message.author.discriminator}***`)
+            .addField('***● Server  :***', `*** → ${message.guild.name}***`)               
     .setColor('#ff0000')
-                 .addField('ø', args)
+                 .addField('ّ', args)
             m.send(``,{embed: bc});
         });
     }
@@ -38,10 +38,10 @@ if(message.content.split(' ')[0] == 'L') {
 
 client.on('message', message => {
     if(message.content.includes('discord.gg')){
-                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? ??   **');
+                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
         if (!message.member.hasPermissions(['ADMINISTRATOR'])){
         message.delete()
-    return message.reply(`** No Invite Links ?? !**`)
+    return message.reply(`** No Invite Links 😠 !**`)
     }
 }
 });
@@ -64,44 +64,44 @@ client.on("message", message => {
     var msg = message.content.toLowerCase();
     if( !message.guild ) return;
     if( !msg.startsWith( prefix + 'role' ) ) return;
-    if(!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(' **__áíÓ áÏíß ÕáÇÍíÇÊ__**');
+    if(!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(' **__ليس لديك صلاحيات__**');
     if( msg.toLowerCase().startsWith( prefix + 'roleremove' ) ){
-        if( !args[0] ) return message.reply( '**:x: íÑÌì æÖÚ ÇáÔÎÕ ÇáãÑÇÏ ÓÍÈ ãäå ÇáÑÊÈÉ**' );
-        if( !args[1] ) return message.reply( '**:x: íÑÌì æÖÚ ÇáÑÊÈÉ ÇáãÑÇÏ ÓÍÈåÇ ãä ÇáÔÎÕ**' );
+        if( !args[0] ) return message.reply( '**:x: يرجى وضع الشخص المراد سحب منه الرتبة**' );
+        if( !args[1] ) return message.reply( '**:x: يرجى وضع الرتبة المراد سحبها من الشخص**' );
         var role = msg.split(' ').slice(2).join(" ").toLowerCase();
         var role1 = message.guild.roles.filter( r=>r.name.toLowerCase().indexOf(role)>-1 ).first();
-        if( !role1 ) return message.reply( '**:x: íÑÌì æÖÚ ÇáÑÊÈÉ ÇáãÑÇÏ ÓÍÈåÇ ãä ÇáÔÎÕ**' );if( message.mentions.members.first() ){
+        if( !role1 ) return message.reply( '**:x: يرجى وضع الرتبة المراد سحبها من الشخص**' );if( message.mentions.members.first() ){
             message.mentions.members.first().removeRole( role1 );
-            return message.reply('**:white_check_mark: [ '+role1.name+' ] ÑÊÈÉ [ '+args[0]+' ] Êã ÓÍÈ ãä **');
+            return message.reply('**:white_check_mark: [ '+role1.name+' ] رتبة [ '+args[0]+' ] تم سحب من **');
         }
         if( args[0].toLowerCase() == "all" ){
             message.guild.members.forEach(m=>m.removeRole( role1 ))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ] Êã ÓÍÈ ãä Çáßá ÑÊÈÉ**');
+            return  message.reply('**:white_check_mark: [ '+role1.name+' ] تم سحب من الكل رتبة**');
         } else if( args[0].toLowerCase() == "bots" ){
             message.guild.members.filter(m=>m.user.bot).forEach(m=>m.removeRole(role1))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ] Êã ÓÍÈ ãä ÇáÈæÊÇÊ ÑÊÈÉ**');
+            return  message.reply('**:white_check_mark: [ '+role1.name+' ] تم سحب من البوتات رتبة**');
         } else if( args[0].toLowerCase() == "humans" ){
             message.guild.members.filter(m=>!m.user.bot).forEach(m=>m.removeRole(role1))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ] Êã ÓÍÈ ãä ÇáÈÔÑííä ÑÊÈÉ**');
+            return  message.reply('**:white_check_mark: [ '+role1.name+' ] تم سحب من البشريين رتبة**');
         }  
     } else {
-        if( !args[0] ) return message.reply( '**:x: íÑÌì æÖÚ ÇáÔÎÕ ÇáãÑÇÏ ÇÚØÇÆåÇ ÇáÑÊÈÉ**' );
-        if( !args[1] ) return message.reply( '**:x: íÑÌì æÖÚ ÇáÑÊÈÉ ÇáãÑÇÏ ÇÚØÇÆåÇ ááÔÎÕ**' );
+        if( !args[0] ) return message.reply( '**:x: يرجى وضع الشخص المراد اعطائها الرتبة**' );
+        if( !args[1] ) return message.reply( '**:x: يرجى وضع الرتبة المراد اعطائها للشخص**' );
         var role = msg.split(' ').slice(2).join(" ").toLowerCase();
         var role1 = message.guild.roles.filter( r=>r.name.toLowerCase().indexOf(role)>-1 ).first();
-        if( !role1 ) return message.reply( '**:x: íÑÌì æÖÚ ÇáÑÊÈÉ ÇáãÑÇÏ ÇÚØÇÆåÇ ááÔÎÕ**' );if( message.mentions.members.first() ){
+        if( !role1 ) return message.reply( '**:x: يرجى وضع الرتبة المراد اعطائها للشخص**' );if( message.mentions.members.first() ){
             message.mentions.members.first().addRole( role1 );
-            return message.reply('**:white_check_mark: [ '+role1.name+' ] ÑÊÈÉ [ '+args[0]+' ] Êã ÇÚØÇÁ **');
+            return message.reply('**:white_check_mark: [ '+role1.name+' ] رتبة [ '+args[0]+' ] تم اعطاء **');
         }
         if( args[0].toLowerCase() == "all" ){
             message.guild.members.forEach(m=>m.addRole( role1 ))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ] Êã ÇÚØÇÁ Çáßá ÑÊÈÉ**');
+            return  message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء الكل رتبة**');
         } else if( args[0].toLowerCase() == "bots" ){
             message.guild.members.filter(m=>m.user.bot).forEach(m=>m.addRole(role1))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ] Êã ÇÚØÇÁ ÇáÈæÊÇÊ ÑÊÈÉ**');
+            return  message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء البوتات رتبة**');
         } else if( args[0].toLowerCase() == "humans" ){
             message.guild.members.filter(m=>!m.user.bot).forEach(m=>m.addRole(role1))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ] Êã ÇÚØÇÁ ÇáÈÔÑííä ÑÊÈÉ**');
+            return  message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء البشريين رتبة**');
         }
     }
 });
@@ -112,19 +112,19 @@ client.on('guildMemberAdd', member=> {
 
 
 client.on("message", message => {
-    var prefix = "-";
+    var prefix = "L";
  
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('? | **áÇ íæÌÏ áÏíß ÕáÇÍíÉ áãÓÍ ÇáÔÇÊ**');
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **لا يوجد لديك صلاحية لمسح الشات**');
         var msg;
         msg = parseInt();
       
       message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
       message.channel.sendMessage("", {embed: {
-        title: "Done | ÊÜÜã ãÓÍ ÇáÔÇÊ",
+        title: "Done | تــم مسح الشات",
         color: 0x06DF00,
-        description: "Êã ãÓÍ ÇáÑÓÇÆá ",
+        description: "تم مسح الرسائل ",
         footer: {
           text: "©KBOOSHDev"
         }
@@ -136,68 +136,68 @@ client.on("message", message => {
 
 client.on("message", message => {
  if (message.content === "Lhelp") {
-        message.react("??")
-           message.react("??")
+        message.react("😘")
+           message.react("😵")
   const embed = new Discord.RichEmbed() 
       .setColor("#ffff00")
       .setThumbnail(message.author.avatarURL)
       .setDescription(`
--?? ÓÑÚå ÇÊÕÇá ããÊÇÒå
--?? Óåá ÇáÇÓÊÎÏÇã 
--? ÕíÇäå ßá íæã
--?? ãÌÇäí Èá ßÇãá 
--?? ÇáÈæÊ ÚÑÈí æ ÓíÊã ÇÖÇÝå ÇááÛå ÇáäßáíÒíÉ
-? ?????????????????? ? 
-???ÇæÇãÑ ÚÇãÉ???
+-🚀 سرعه اتصال ممتازه
+-😎 سهل الاستخدام 
+-⚠ صيانه كل يوم
+-💵 مجاني بل كامل 
+-📚 البوت عربي و سيتم اضافه اللغه النكليزية
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+💎『اوامر عامة』💎
                         
-??^^server ?ãÚáæãÇÊ Úä ÇáÓíÑÝÑ?                      
-??^^servers ?ÚáÔÇä ÊÔæÝ ÇáÈæÊ Èßã ÓíÑÝÑ Çæä áÇíä ?  
-??^^bot ?áãÚÑÝ ÇáÈæÊ Èßã ÓíÑÝÑ?
-??^^date ?áãÚÑÝå ÇáÊÇÑíÎ?
-??^^ping ?áãÚÑÝå ÓÑÚå ÇáÈæÊ?
-??^^members ?ãÚáæãÇÊ Úä ÇáÇÚÖÇÁ?
-??^^embed ?ÎÇÕíå ÛÑÏ áßä ÈÛíÑ ØÑíÞå?
-??^^say ?áí íßÑÑ ÇáßáÇã ÇáÐí ÊÞæáå?
-??^^animal  ?ßæÏ áí ÇÖåÇÑ ÕæÑ  ááÍíæÇäÇÊ?
-? ?????????????????? ? 
-???ÇæÇãÑ ÇÏÇÑíÉ???
-??^^rooms ?áãÚÑÝå ÚÏÏ ÑæãÇÊ ÇáÓíÑÝÑ?
-??^^ban ?áÊÚØí ÔÎÕ ÈÇäÏ?
-??^^kick ?áÊÚØí ÔÎÕ ßíß?
-??^^clear ?áãÓÍ ÇáÔÇÊ ÈÑÞã?
-??^^edit  ?áÊÚÏíá ÑÓÇáå ?
-??^^ct  ãÜáÇÍÙå: ÇáÇÓã ÇäÊ ÊÎÊÇÑå?áí ÇäÔÇÁ Ñæã ßÊÇÈí?
-??^^cv  ãÜáÇÍÙå: ÇáÇÓã ÇäÊ ÊÎÊÇÑå?áí ÇäÔÇÁ Ñæã ÕæÊí?
-??^^delet  ?ßÜæÏ íÍÐÝ ÇáÜÑæã ÓæÇÁ ÕæÊí Çæ ßÊÇÈí?
-? ?????????????????? ? 
-???ÇáÞÑÚÉ???
-??^^roll 1   ?ÇáÞÑÚÉ ãä 1 Çáì 25?
-??^^roll 2   ?ÇáÞÑÚÉ ãä 1 Çáì 50?
-??^^roll 3   ?ÇáÞÑÚÉ ãä 1 Çáì 75?
-??^^roll 4   ?ÇáÞÑÚÉ ãä 1 Çáì 100?
-? ?????????????????? ? 
-???ÇáÚÇÈ???
-??^^ßÊ ÊæíÊ
-??^^ãÑíã 
-??^^ÎæÇØÑ 
-? ?????????????????? ? 
-???ÇæÇãÑ ÇáÕæÑ???
-??^^avatar ?áí ÚÑÖ ÕæÑÊß Çæ ÕæÑå Çí ÔÎÕ?
-??^^image ?áí ÚÑÖ ÕæÑå ÇáÓíÑÝÑ?
-??ÞÑíÈÇ
-? ?????????????????? ? 
-???ÇäæÇÚ ÇáÊÑÍíÈ???
-?? ÊÑÍíÈ 1 / ÊÑÍíÈ 2 
-?? ÊÑÍíÈ 3 / ÊÑÍíÈ 4
-?? ÊÑÍíÈ 5 / ÊÑÍíÈ 6 
-?? ÊÑÍíÈ 7 / ÊÑÍíÈ 8
-?? ÊÑÍíÈ 9 / ÊÑÍíÈ 10
-? ?????????????????? ? 
-???ÇáÏÚã ÇáÝäí æÇáãÓÇÚÏÉ???
-^^invite | ÇáÞÓã ÇáÇæá áí ÇÖÇÝå ÇáÈæÊ 
-^^support| ÇáÞÓã ÇáËÇäí  ÇáÏÚã ÇáÝäí æ ÇáãÓÇÚÏÉ
-ÇáÞÓã ÇáËÇáË ãÕãã ÇáÈæÊ | @ÍÜ?????Óæäí ÂÅáÚÑÂÅÞÜ?????í#7725 
-? ?????????????????? ? 
+💎^^server 『معلومات عن السيرفر』                      
+💎^^servers 『علشان تشوف البوت بكم سيرفر اون لاين 』  
+💎^^bot 『لمعرف البوت بكم سيرفر』
+💎^^date 『لمعرفه التاريخ』
+💎^^ping 『لمعرفه سرعه البوت』
+💎^^members 『معلومات عن الاعضاء』
+💎^^embed 『خاصيه غرد لكن بغير طريقه』
+💎^^say 『لي يكرر الكلام الذي تقوله』
+💎^^animal  『كود لي اضهار صور  للحيوانات』
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+👑『اوامر ادارية』👑
+👑^^rooms 『لمعرفه عدد رومات السيرفر』
+👑^^ban 『لتعطي شخص باند』
+👑^^kick 『لتعطي شخص كيك』
+👑^^clear 『لمسح الشات برقم』
+👑^^edit  『لتعديل رساله 』
+👑^^ct  مـلاحظه: الاسم انت تختاره『لي انشاء روم كتابي』
+👑^^cv  مـلاحظه: الاسم انت تختاره『لي انشاء روم صوتي』
+👑^^delet  『كـود يحذف الـروم سواء صوتي او كتابي』
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+🎲『القرعة』🎲
+🎲^^roll 1   『القرعة من 1 الى 25』
+🎲^^roll 2   『القرعة من 1 الى 50』
+🎲^^roll 3   『القرعة من 1 الى 75』
+🎲^^roll 4   『القرعة من 1 الى 100』
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+🎮『العاب』🎮
+🎮^^كت تويت
+🎮^^مريم 
+🎮^^خواطر 
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+🎴『اوامر الصور』🎴
+🎴^^avatar 『لي عرض صورتك او صوره اي شخص』
+🎴^^image 『لي عرض صوره السيرفر』
+🎴قريبا
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+🎎『انواع الترحيب』🎎
+🎎 ترحيب 1 / ترحيب 2 
+🎎 ترحيب 3 / ترحيب 4
+🎎 ترحيب 5 / ترحيب 6 
+🎎 ترحيب 7 / ترحيب 8
+🎎 ترحيب 9 / ترحيب 10
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+💎『الدعم الفني والمساعدة』💎
+^^invite | القسم الاول لي اضافه البوت 
+^^support| القسم الثاني  الدعم الفني و المساعدة
+القسم الثالث مصمم البوت | @حـ♥̨̥̬̩سوني آإلعرآإقـ♥̨̥̬̩ي#7725 
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 `)
 
 
@@ -234,9 +234,9 @@ client.on('message', function(message) {
     if(message.content ===  'Lcolor 50') {
         if(message.member.hasPermission('MANAGE_ROLES')) {
             setInterval(function(){})
-            message.channel.send('ÌÇÑí Úãá ÇáÇáæÇä |?')
+            message.channel.send('جاري عمل الالوان |✅')
         }else{
-            message.channel.send('ãÇ ãÚÇß ÇáÈÑãÔä ÇáãØáæÈ  |?')
+            message.channel.send('ما معاك البرمشن المطلوب  |❌')
             }
     }
 });
@@ -262,9 +262,9 @@ client.on('message', function(message) {
     if(message.content ===  'Lcolor 100') {
         if(message.member.hasPermission('MANAGE_ROLES')) {
             setInterval(function(){})
-            message.channel.send('ÌÇÑí Úãá ÇáÇáæÇä |?')
+            message.channel.send('جاري عمل الالوان |✅')
         }else{
-            message.channel.send('ãÇ ãÚÇß ÇáÈÑãÔä ÇáãØáæÈ  |?')
+            message.channel.send('ما معاك البرمشن المطلوب  |❌')
             }
     }
 });
@@ -290,9 +290,9 @@ client.on('message', function(message) {
     if(message.content ===  'Lcolor 140') {
         if(message.member.hasPermission('MANAGE_ROLES')) {
             setInterval(function(){})
-            message.channel.send('ÌÇÑí Úãá ÇáÇáæÇä |?')
+            message.channel.send('جاري عمل الالوان |✅')
         }else{
-            message.channel.send('ãÇ ãÚÇß ÇáÈÑãÔä ÇáãØáæÈ  |?')
+            message.channel.send('ما معاك البرمشن المطلوب  |❌')
             }
     }
 });
@@ -318,7 +318,7 @@ client.on('message', message=>{
     if (message.content.startsWith('Lkick')) {
         var member= message.mentions.members.first();
         member.kick().then((member) => {
-            message.channel.send(member.displayName + ' Êã ØÑÏ åÐÇ ÇáÔÎÕ ãä ÇáÓíÑÝÑ');
+            message.channel.send(member.displayName + ' تم طرد هذا الشخص من السيرفر');
         }).catch(() => {
             message.channel.send(":x:");
         });
@@ -329,10 +329,10 @@ client.on('message', message=>{
 
 client.on('message', (message) => {
     if (message.content.startsWith('Lban ')) {
-      if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('åÐÇ ÇáÎÇÕíÉ ááÏÇÑÉ ÝÞØ');
+      if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('هذا الخاصية للدارة فقط');
         var member= message.mentions.members.first();
         member.ban().then((member) => {
-         message.channel.send(member.displayName + 'Êã ØÑÏ åÐÇ ÇáÔÎÕ ãä ÇáÓíÑÝÑ');
+         message.channel.send(member.displayName + 'تم طرد هذا الشخص من السيرفر');
         }).catch(() => {
             message.channel.send('Error :_:');
         });
@@ -352,15 +352,15 @@ client.on('message', message => {
          .setColor('RANDOM')
          .setTimestamp()
          .setTitle(message.guild.name,message.guild.iconURL)
-         .addField(':id: Çí Ïí ÇáÓíÑÝÑ',`${message.guild.id}`,true)
-         .addField(':date: ÃäÔÆÊ Ýí',D3 + '.' + M2 + '.' + Y1,true)             
-         .addField(':crown: ÇæäÑ ÇáÓíÑÝÑ',`${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)             
-         .addField(':busts_in_silhouette: ÇáÇÚÖÇÁ ' + ` ${message.guild.memberCount} `,'Online '+`[ ${message.guild.members.filter(m=>m.presence.status == 'online','idle','dnd').size} ]`+ ','+'Offline '+`[ ${message.guild.members.filter(m=>m.presence.status == 'offline').size} ]`,true)
-         .addField(':speech_balloon: ÞäæÇÊ' +' '+message.guild.channels.size+' ',`Text [ ${message.guild.channels.filter(m => m.type === 'text').size} ]`+', '+`Voice [ ${message.guild.channels.filter(m => m.type === 'voice').size} ]`,true)
-         .addField(':earth_asia: ÇáÏæáå',message.guild.region)
-         .addField(':ribbon: ÇíãæÌí ÇáÓíÑÝÑ',`${message.guild.emojis.size}`,true)
-         .addField(':construction: ãÓÊæì ÇáÊÍÞÞ',`${verificationLevels[message.guild.verificationLevel]}`,true)
-         .addField(':closed_lock_with_key: ÇáÑÊÈ  '+message.guild.roles.size+' ','Type `.roles` To See The Server Roles!')
+         .addField(':id: اي دي السيرفر',`${message.guild.id}`,true)
+         .addField(':date: أنشئت في',D3 + '.' + M2 + '.' + Y1,true)             
+         .addField(':crown: اونر السيرفر',`${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)             
+         .addField(':busts_in_silhouette: الاعضاء ' + ` ${message.guild.memberCount} `,'Online '+`[ ${message.guild.members.filter(m=>m.presence.status == 'online','idle','dnd').size} ]`+ ','+'Offline '+`[ ${message.guild.members.filter(m=>m.presence.status == 'offline').size} ]`,true)
+         .addField(':speech_balloon: قنوات' +' '+message.guild.channels.size+' ',`Text [ ${message.guild.channels.filter(m => m.type === 'text').size} ]`+', '+`Voice [ ${message.guild.channels.filter(m => m.type === 'voice').size} ]`,true)
+         .addField(':earth_asia: الدوله',message.guild.region)
+         .addField(':ribbon: ايموجي السيرفر',`${message.guild.emojis.size}`,true)
+         .addField(':construction: مستوى التحقق',`${verificationLevels[message.guild.verificationLevel]}`,true)
+         .addField(':closed_lock_with_key: الرتب  '+message.guild.roles.size+' ','Type `.roles` To See The Server Roles!')
          message.channel.send({embed:xNiTRoZ});
      }
     });
@@ -383,9 +383,9 @@ message.channel.sendEmbed(embed);
 
 client.on('message', message => {
 if (message.content === "Lhelp") {
-message.reply("**Done | ÊÜÜã**")
-message.reply("**Êã ÇÑÓÇá ÇæÇãÑ ÇáÈæÊ Ýí ÇáÎÇÕ**")
-message.react("??")
+message.reply("**Done | تــم**")
+message.reply("**تم ارسال اوامر البوت في الخاص**")
+message.react("📩")
 
 }
 });
@@ -395,7 +395,7 @@ client.on('message', message => {
     if(message.content.includes('discord.gg')){
       if(!message.member.hasPermission('ADMINISTRATOR'))
         message.delete()
-    return message.reply(`** íãäÚ äÔÑ ÇáÑæÇÈØ ! **`)
+    return message.reply(`** يمنع نشر الروابط ! **`)
     }
 });
 
@@ -407,14 +407,14 @@ Lid") {
      let embed = new Discord.RichEmbed()
   .setThumbnail(message.author.avatarURL)  
   .setAuthor(message.author.username)
-.setDescription("ãÚáæãÇÊ Úä ÇáÍÜÜÓÇÈ")
+.setDescription("معلومات عن الحــساب")
                .setFooter(`Desert Bot.`, '')
   .setColor("#9B59B6")
-  .addField("ÇÓÜÜÜã ÇáÍÓÜÜÇÈ", `${message.author.username}`)
-  .addField('ßæÏ ÇáÍÓÇÈ ÇáÎÇÕ', message.author.discriminator)
-  .addField("ÇáÑÞÜÜÜã ÇáÔÜÜÜÎÕí", message.author.id)
-  .addField('ÈÜÜÜÜæÊ', message.author.bot)
-  .addField("ÊÇÑíÎ ÇáÊÓÌíá", message.author.createdAt)
+  .addField("اســـم الحســاب", `${message.author.username}`)
+  .addField('كود الحساب الخاص', message.author.discriminator)
+  .addField("الرقـــم الشـــخصي", message.author.id)
+  .addField('بــــوت', message.author.bot)
+  .addField("تاريخ التسجيل", message.author.createdAt)
      
      
   message.channel.sendEmbed(embed);
@@ -431,11 +431,11 @@ client.on('message', message => {
 if (message.content === 'Lhelp') {
          let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)    
-      .addField("** ?? ÇæÇãÑ ÇáãíæÒß**","** **")
-      .addField("***play :musical_note:**","**áÜ ÊÔÛíá ÇáãØáæÈ**")
-      .addField("***stop  :musical_keyboard:**","**áÜ ÇíÞÇÝ ÇáãØáæÈ**")
-      .addField("***pause :musical_score:**","**áÜ ÇíÞÇÝ ÇáãØæÈ ãÄÞÊ**")
-      .addField("***resume :mute: **","**áÜ ÊÔÛíá ÇáãØæÈ ÈÚÏ ÇáÊæÞíÝ**")
+      .addField("** 🎶 اوامر الميوزك**","** **")
+      .addField("***play :musical_note:**","**لـ تشغيل المطلوب**")
+      .addField("***stop  :musical_keyboard:**","**لـ ايقاف المطلوب**")
+      .addField("***pause :musical_score:**","**لـ ايقاف المطوب مؤقت**")
+      .addField("***resume :mute: **","**لـ تشغيل المطوب بعد التوقيف**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
@@ -451,12 +451,12 @@ client.on('message', message => {
 if (message.content === 'Lhelp') {
          let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)    
-      .addField("**:radioactive: ÃæÇãÑ ÇáÃÏÇÑå**","** **")
-      .addField("***bc  :mega:**","**áÜ ÇáÈÑæÏßÇÓÊ**")
-      .addField("***clear :octagonal_sign:**","**áÜ ãÓÍ ÇáÔÇÊ**")
-	  .addField("***createcolors :cyclone:**","** áÜ ÇÖÇÝÉ 110 áæä**")
-      .addField("***kick  :outbox_tray:**","**áÜ ØÑÏ ÇáÃÚÖÇÁ**")
-      .addField("***ban  :no_entry:**","**áÜ ÍÙÑ ÇáÃÚÖÇÁ**")
+      .addField("**:radioactive: أوامر الأداره**","** **")
+      .addField("***bc  :mega:**","**لـ البرودكاست**")
+      .addField("***clear :octagonal_sign:**","**لـ مسح الشات**")
+	  .addField("***createcolors :cyclone:**","** لـ اضافة 110 لون**")
+      .addField("***kick  :outbox_tray:**","**لـ طرد الأعضاء**")
+      .addField("***ban  :no_entry:**","**لـ حظر الأعضاء**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
@@ -472,16 +472,16 @@ client.on('message', message => {
 if (message.content === 'Lhelp') {
          let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)    
-      .addField("**:globe_with_meridians: ÇáÃæÇãÑ ÇáÚÇãå**","** **")
-      .addField("***ping :stopwatch:**","**áÜ ÓÑÚÉ ÅÊÕÇáß**")
-      .addField("***id :chart_with_downwards_trend:**","**ÚÑÖ ÓÑÚå ÇÊÕÇá ÇáÈæÊ**")
-      .addField("***avatar :camping:**","**áÜ ÕæÑ ÇáÔÎÕ ÇáãÎÊÇÑ**")
-      .addField("***roll :1234:**","**áÜ ÇáÞÑÚå ãä 1 - 100**")
-      .addField("***server :recycle:**","**áÜ ãÚáæãÇÊ ÇáÓíÑÝÑ**")
-      .addField("***roles :medal: **","**ãÓÍ ãÍÇÏËÇÊ ÇáÔÇÊ**")
-      .addField("***say :arrows_counterclockwise:**","**áÜ íßÑÑ ÇáßáÇã Çááì ÊÞæáå**")
-      .addField("***time :alarm_clock:**","**áÜ ãÚÑÝÉ ÇáÓÇÚÉ**")
-      .addField("***date **","**áÜ ãÚÑÝÉ ÇáÊÇÑíÎ**")
+      .addField("**:globe_with_meridians: الأوامر العامه**","** **")
+      .addField("***ping :stopwatch:**","**لـ سرعة إتصالك**")
+      .addField("***id :chart_with_downwards_trend:**","**عرض سرعه اتصال البوت**")
+      .addField("***avatar :camping:**","**لـ صور الشخص المختار**")
+      .addField("***roll :1234:**","**لـ القرعه من 1 - 100**")
+      .addField("***server :recycle:**","**لـ معلومات السيرفر**")
+      .addField("***roles :medal: **","**مسح محادثات الشات**")
+      .addField("***say :arrows_counterclockwise:**","**لـ يكرر الكلام اللى تقوله**")
+      .addField("***time :alarm_clock:**","**لـ معرفة الساعة**")
+      .addField("***date **","**لـ معرفة التاريخ**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
@@ -490,20 +490,20 @@ if (message.content === 'Lhelp') {
 
 
 client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', '??????????????????');
+    let channel = member.guild.channels.find('name', '♛『𝓦𝓔𝓛𝓒𝓞𝓜𝓔』♛');
     let memberavatar = member.user.avatarURL
       if (!channel) return;
     let embed = new Discord.RichEmbed()
         .setColor('PURPLE')
         .setThumbnail(memberavatar)
-        .addField('?? | name :  ',`${member}`)
-        .addField('?? | ÇØáÞ ãä ÏÎá' , `Welcome to the server, ${member}`)
-        .addField('?? | user :', "**[" + `${member.id}` + "]**" )
-                .addField('?| ÇäÊ ÇáÚÖæ ÑÞã',`${member.guild.memberCount}`)
+        .addField('🎽 | name :  ',`${member}`)
+        .addField('📢 | اطلق من دخل' , `Welcome to the server, ${member}`)
+        .addField('🆔 | user :', "**[" + `${member.id}` + "]**" )
+                .addField('➡| انت العضو رقم',`${member.guild.memberCount}`)
                
                   .addField("Name:",`<@` + `${member.id}` + `>`, true)
                      
-                                     .addField(' ÇáÜÓíÑÝÑ', `${member.guild.name}`,true)
+                                     .addField(' الـسيرفر', `${member.guild.name}`,true)
                                        
      .setFooter(`${member.guild.name}`)
         .setTimestamp()
@@ -515,11 +515,11 @@ client.on('guildMemberAdd', member => {
         var embed = new Discord.RichEmbed()
         .setAuthor(member.user.username, member.user.avatarURL)
         .setThumbnail(member.user.avatarURL)
-        .setTitle(`ÈÓ ÈÚÑÝ æíä ÑÍÊ¿¿¿ :raised_hand::skin-tone-1: :pensive:`)
-        .setDescription(`ãÚ ÇáÓáÇãå ÊÔÑÝäÇ Èß :raised_hand::skin-tone-1: :pensive: `)
-        .addField('??   ÊÈÞí',`**[ ${member.guild.memberCount} ]**`,true)
+        .setTitle(`بس بعرف وين رحت؟؟؟ :raised_hand::skin-tone-1: :pensive:`)
+        .setDescription(`مع السلامه تشرفنا بك :raised_hand::skin-tone-1: :pensive: `)
+        .addField('👤   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
         .setColor('PURPLE')
-        .setFooter(`====ÇåáÇ ÇáÓíÑÝÑ äæÑ Èíß æ Çááå====`, 'https://cdn.discordapp.com/attachments/397818254439219217/399292026782351381/shy.png')
+        .setFooter(`====اهلا السيرفر نور بيك و الله====`, 'https://cdn.discordapp.com/attachments/397818254439219217/399292026782351381/shy.png')
    
     var channel =member.guild.channels.find('name', 'welcome')
     if (!channel) return;
@@ -529,7 +529,7 @@ client.on('guildMemberAdd', member => {
 
 
 client.on('message', message => {
-    var prefix = "-"
+    var prefix = "L"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
  
@@ -545,10 +545,10 @@ client.on('message', message => {
   if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.reply("**I Don't Have ` KICK_MEMBERS ` Permission**");
   let user = message.mentions.users.first();
   let reason = message.content.split(" ").slice(2).join(" ");
-  if (message.mentions.users.size < 1) return message.reply("**ãäÔä ÔÎÕ**");
-  if(!reason) return message.reply ("**ÇßÊÈ ÓÈÈ ÇáØÑÏ**");
+  if (message.mentions.users.size < 1) return message.reply("**منشن شخص**");
+  if(!reason) return message.reply ("**اكتب سبب الطرد**");
   if (!message.guild.member(user)
-  .kickable) return message.reply("**áÇíãßääí ØÑÏ ÔÎÕ ÇÚáì ãä ÑÊÈÊí íÑÌå ÇÚØÇÁ ÇáÈæÊ ÑÊÈå ÚÇáí**");
+  .kickable) return message.reply("**لايمكنني طرد شخص اعلى من رتبتي يرجه اعطاء البوت رتبه عالي**");
  
   message.guild.member(user).kick();
  
@@ -556,8 +556,8 @@ client.on('message', message => {
   .setAuthor(`KICKED!`, user.displayAvatarURL)
   .setColor("PURPLE")
   .setTimestamp()
-  .addField("**ÇÁ Êã ÇÚØÇ ØÑÏ áí:**",  '**[ ' + `${user.tag}` + ' ]**')
-  .addField("**ÈæÇÓØÉ:**", '**[ ' + `${message.author.tag}` + ' ]**')
+  .addField("**اء تم اعطا طرد لي:**",  '**[ ' + `${user.tag}` + ' ]**')
+  .addField("**بواسطة:**", '**[ ' + `${message.author.tag}` + ' ]**')
   .addField("**Reason:**", '**[ ' + `${reason}` + ' ]**')
   message.channel.send({
     embed : kickembed
@@ -567,7 +567,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    var prefix = "-"
+    var prefix = "L"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
  
@@ -585,10 +585,10 @@ client.on('message', message => {
   let reason = message.content.split(" ").slice(2).join(" ");
   /*let b5bzlog = client.channels.find("name", "5bz-log");
   if(!b5bzlog) return message.reply("I've detected that this server doesn't have a 5bz-log text channel.");*/
-  if (message.mentions.users.size < 1) return message.reply("**ãäÔä ÔÎÕ**");
-  if(!reason) return message.reply ("**ÇßÊÈ ÓÈÈ ÇáØÑÏ**");
+  if (message.mentions.users.size < 1) return message.reply("**منشن شخص**");
+  if(!reason) return message.reply ("**اكتب سبب الطرد**");
   if (!message.guild.member(user)
-  .bannable) return message.reply("**áÇíãßääí ØÑÏ ÔÎÕ ÇÚáì ãä ÑÊÈÊí íÑÌå ÇÚØÇÁ ÇáÈæÊ ÑÊÈå ÚÇáí**");
+  .bannable) return message.reply("**لايمكنني طرد شخص اعلى من رتبتي يرجه اعطاء البوت رتبه عالي**");
  
   message.guild.member(user).ban(7, user);
  
@@ -606,32 +606,32 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-	var prefix = "-";
+	var prefix = "L";
     if(message.author.bot) return;
     var name1 = message.mentions.users.first();
     var reason = message.content.split(' ').slice(2).join(' ');
     if(message.content.startsWith(prefix + 'report')) {
         if(message.author.bot) return;
-        if(!message.guild.channels.find('name', 'report')) return message.channel.send('**äÑÌæ Úãá Ñæã ÈÇÓã report**').then(msg => msg.delete(5000));
-    if(!name1) return message.reply('**:innocent:ãäÔä:innocent:**').then(msg => msg.delete(3000))
+        if(!message.guild.channels.find('name', 'report')) return message.channel.send('**نرجو عمل روم باسم report**').then(msg => msg.delete(5000));
+    if(!name1) return message.reply('**:innocent:منشن:innocent:**').then(msg => msg.delete(3000))
         message.delete();
-    if(!reason) return message.reply('**:innocent:æÔ Óæì¿:innocent:**').then(msg => msg.delete(3000))
+    if(!reason) return message.reply('**:innocent:وش سوى؟:innocent:**').then(msg => msg.delete(3000))
         message.delete();
     var abod = new Discord.RichEmbed()
-    .setTitle(`ÈáÇÛ ãä ÞÈá: ${message.author.tag}`)
-    .addField('**ÇáãÌÑã:**', `${name1}`, true)
-    .addField('**ÈÑæã:**', `${message.channel.name}`, true)
-    .addField('**ÇáÈáÇÛ:**', `${reason}`, true)
+    .setTitle(`بلاغ من قبل: ${message.author.tag}`)
+    .addField('**المجرم:**', `${name1}`, true)
+    .addField('**بروم:**', `${message.channel.name}`, true)
+    .addField('**البلاغ:**', `${reason}`, true)
     .setFooter(`${message.author.username}#${message.author.discriminator}`, message.author.avatarURL)
     .setTimestamp()
         message.guild.channels.find('name', 'report').sendEmbed(abod)
-    message.reply('**:sunglasses:ÈäÃÎÐ ÍÞß:sunglasses:**').then(msg => msg.delete(3000));
+    message.reply('**:sunglasses:بنأخذ حقك:sunglasses:**').then(msg => msg.delete(3000));
     }
 });
 
  
 client.on("message", message => {
-    var prefix = "-";
+    var prefix = "L";
  if (message.content === "-help") {
   const embed = new Discord.RichEmbed()  
       .setColor("#000000")
@@ -640,13 +640,13 @@ client.on("message", message => {
              Please Chose:
  
              
-${prefix}help-public ? ÇæÇãÑ ÚÇãÉ
+${prefix}help-public ⇏ اوامر عامة
  
-${prefix}help-admin ? ÇæÇãÑ ÇÏÇÑÉ ÇáÓíÑÝÑ
+${prefix}help-admin ⇏ اوامر ادارة السيرفر
              
-${prefix}help-games ? ÇæÇãÑ ÇáÇáÚÇÈ
+${prefix}help-games ⇏ اوامر الالعاب
  
-${prefix}help-music ? ÇæÇãÑ ÇáãæÓíÞì
+${prefix}help-music ⇏ اوامر الموسيقى
  
       `)
    message.channel.sendEmbed(embed)
@@ -656,41 +656,41 @@ ${prefix}help-music ? ÇæÇãÑ ÇáãæÓíÞì
  
  
 client.on("message", message => {
-    var prefix = "-";
+    var prefix = "L";
  if (message.content === "-help-public") {
-     message.channel.send('**Êã ÇÑÓÇáß Ýí ÇáÎÇÕ** :mailbox_with_mail: ');
+     message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed()
       .setColor("#000000")
       .setDescription(`
-              ÇæÇãÑ ÚÇãÉ
-?-allbots ~ áÚÑÖ ÌãíÚ ÇáÈæÊÇÊ Çáí ÈÇáÓíÑÝÑ
-?-server ~íÚÑÖ áß ãÚáæãÇÊ Úä ÇáÓíÑÝÑ
-?-bot ~ íÚÑÖ áß ßá ãÚáæãÇÊ ÇáÈæÊ
-?-skin <name> ~ íÚÑÖ áß Óßäß ÈãÇíä ßÑÇÝÊ
-?-count ~ íÚÑÖ áß ÚÏÏ ÇáÇÔÎÇÕ ÈÇáÓíÑÝÑ ÈÏæä ÈæÊÇÊ
-?-invites ~ íÚÑÖ áß  ÚÏÏ ÇäÝÇíÊÇÊß ÈÇáÓíÑÝÑ
-?-invite-codes ~ íÚÑÖ áß ÑæÇÈØ ÇáÇäÝÇíÊÇÊ Íßß Ýí ÇáÓíÑÝÑ
-?-cal ~ Çáå ÍÇÓÈÉ
-?-trans <language> <any thing> ~ íÊÑÌã áß Çáí ÊÈíå ãä Çí áÛÉ
-?-short ~ íÎÊÕÑ áß ÑÇÈØ ßÈíÑ Çáì ÑÇÈØ ÕÛíÑ
-?-tag ~ íßÊÈ áß ÇáßáãÉ ÈÔßá Ìãíá æßÈíÑ
-?-google ~ ááÈÍË Ýí ÞæÞá Úä ØÑíÞ ÇáÏÓßæÑÏ
-?-perms ~ íÚÑÖ áß ÈÑãÔäÇÊß ÈÇáÓíÑÝÑ
-?-za5 ~ íÒÎÑÝ áß ßáãÉ Çæ ÌãáÉ
-?-rooms ~ íÚÑÖ áß ßá ÇáÑæãÇÊ Çáí ÈÇáÓíÑÝÑ ãÚ ÚÏÏåÇ
-?-roles ~ íÚÑÖ áß ßá ÇáÑÇäßÇÊ ÈÇáÓíÑÝÑ ÈÔßá Ìãíá
-?-emojilist ~ íÚÑÖ áß ßá ÇáÇíãæÌíÇÊ Çáí ÈÇáÓíÑÝÑ
-?-say ~ íßÑÑ ÇáßáÇã Çáí ÊßÊÈæ
-?-image ~ ÕæÑÉ ÇáÓíÑÝÑ
-?-members ~ íÚÑÖ áß ÚÏÏ ßá ÍÇáÇÊ ÇáÇÔÎÇÕ æÚÏÏ ÇáÈæÊÇÊ æÚÏÏ ÇáÇÔÎÇÕ
-?-id ~ ãÚáæãÇÊ Úäß
-?-bans ~ ÚÏÏ ÇáÇÔÎÇÕ ÇáãÈäÏÉ
-?-avatar ~ ÕæÑÊß Çæ ÕæÑÉ Çáí ÊãäÔäæ
-?-embed ~ íßÑÑ Çáí ÊÞæáæ ÈÔßá Íáæ
-?-emoji <any things> ~ áÊÍæíá Çí ßáãå ÊÞæáåÇ Çáí ÇíãæÌí
-?-inv ~ áÏÚæÉ ÇáÈæÊ Çáì ÓíÑÝÑß
-?-support ~ ÓíÑÝÑ ÇáÏÚã
-?-contact ~ ÇÑÓÇá ÇÞÊÑÇÍ Çæ áãÑÇÓáÉ ÕÇÍÈ ÇáÈæÊ
+              اوامر عامة
+❖-allbots ~ لعرض جميع البوتات الي بالسيرفر
+❖-server ~يعرض لك معلومات عن السيرفر
+❖-bot ~ يعرض لك كل معلومات البوت
+❖-skin <name> ~ يعرض لك سكنك بماين كرافت
+❖-count ~ يعرض لك عدد الاشخاص بالسيرفر بدون بوتات
+❖-invites ~ يعرض لك  عدد انفايتاتك بالسيرفر
+❖-invite-codes ~ يعرض لك روابط الانفايتات حكك في السيرفر
+❖-cal ~ اله حاسبة
+❖-trans <language> <any thing> ~ يترجم لك الي تبيه من اي لغة
+❖-short ~ يختصر لك رابط كبير الى رابط صغير
+❖-tag ~ يكتب لك الكلمة بشكل جميل وكبير
+❖-google ~ للبحث في قوقل عن طريق الدسكورد
+❖-perms ~ يعرض لك برمشناتك بالسيرفر
+❖-za5 ~ يزخرف لك كلمة او جملة
+❖-rooms ~ يعرض لك كل الرومات الي بالسيرفر مع عددها
+❖-roles ~ يعرض لك كل الرانكات بالسيرفر بشكل جميل
+❖-emojilist ~ يعرض لك كل الايموجيات الي بالسيرفر
+❖-say ~ يكرر الكلام الي تكتبو
+❖-image ~ صورة السيرفر
+❖-members ~ يعرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص
+❖-id ~ معلومات عنك
+❖-bans ~ عدد الاشخاص المبندة
+❖-avatar ~ صورتك او صورة الي تمنشنو
+❖-embed ~ يكرر الي تقولو بشكل حلو
+❖-emoji <any things> ~ لتحويل اي كلمه تقولها الي ايموجي
+❖-inv ~ لدعوة البوت الى سيرفرك
+❖-support ~ سيرفر الدعم
+❖-contact ~ ارسال اقتراح او لمراسلة صاحب البوت
 `)
    message.author.sendEmbed(embed)
    
@@ -698,36 +698,36 @@ client.on("message", message => {
    });
    
    client.on("message", message => {
-    var prefix = "-";
+    var prefix = "L";
  if (message.content === "-help-admin") {
-      message.channel.send('**Êã ÇÑÓÇáß Ýí ÇáÎÇÕ** :mailbox_with_mail: ');
+      message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed()
       .setColor("#000000")
       .setDescription(`
-          ÇæÇãÑ ÇÏÇÑÉ ÇáÓíÑÝÑ
-?-move @user ~  áÓÍÈ ÇáÔÎÕ Çáì Ñææãß
-?-bc ~ ÑÓÇáÉ ÌãÇÚíÉ Çáì ßá ÇÚÖÇÁ ÇáÓíÑÝÑ
-?-role @user <rank> ~ áÃÚØÇÁ ÑÊÈÉ áÚÖæ ãÚíä
-?-roleremove @user <rank> ~ áÇÒÇáÉ ÇáÑÊÈÉ ãä ÔÎÕ ãÚíä
-?-role all <rank> ~ áÃÚØÇÁ ÑÊÈÉ ááÌãíÚ
-?-role humans <rank> ~ áÃÚØÇÁ ÑÊÈÉ ááÇÔÎÇÕ ÝÞØ
-?-role bots <rank> ~ áÃÚØÇÁ ÑÊÈÉ áÌãíÚ ÇáÈæÊÇÊ
-?-hchannel ~ ÇÎÝÇÁ ÇáÔÇÊ
-?-schannel ~ ÇÖåÇÑ ÇáÔÇÊ ÇáãÎÝíÉ
-?-clr <numbr> ~ ãÓÍ ÇáÔÇÊ ÈÚÏÏ
-?-clear ~ ãÓÍ ÇáÔÇÊ
-?-mute @user <reason> ~ ÇÚØÇÁ ÇáÚÖæ ãíæÊ áÇÒã ÑÊÈÉ <Muted>
-?-unmute @user ~ áÝß ÇáãíæÊ Úä ÇáÔÎÕ
-?-kick @user <reason> ~ ØÑÏ ÇáÔÎÕ ãä ÇáÓíÑÝÑ
-?-ban @user <reason> ~ ÍÖÑ ÇáÔÎÕ ãä ÇáÓíÑÝÑ
-?-mutechannel ~ ÊÞÝíá ÇáÔÇÊ
-?-unmutechannel ~ ÝÊÍ ÇáÔÇÊ
-?-dc ~ ãÓÍ ßá ÇáÑæãÇÊ
-?-dr ~ <ãÓÍ ßá ÇáÑÇäßÇÊ <áÇÒã Êßæä ÑÇäß ÇáÈæÊ ÝæÞ ßá ÇáÑÇäßÇÊ
-?-ct <name> ~ ÇäÔÇÁ ÔÇÊ
-?-cv <name> ~ ÇäÔÇÁ Ñææã ÝæíÓ
-?-delet <name> ~ ãÓÍ ÇáÔÇÊ Çæ ÇáÑææã ÝæíÓ
-?-ccolors <number> ~ íäÔÇ áß ÇáæÇä ãÚ ßã ÇáæÇä ÊÈí
+          اوامر ادارة السيرفر
+❖-move @user ~  لسحب الشخص الى روومك
+❖-bc ~ رسالة جماعية الى كل اعضاء السيرفر
+❖-role @user <rank> ~ لأعطاء رتبة لعضو معين
+❖-roleremove @user <rank> ~ لازالة الرتبة من شخص معين
+❖-role all <rank> ~ لأعطاء رتبة للجميع
+❖-role humans <rank> ~ لأعطاء رتبة للاشخاص فقط
+❖-role bots <rank> ~ لأعطاء رتبة لجميع البوتات
+❖-hchannel ~ اخفاء الشات
+❖-schannel ~ اضهار الشات المخفية
+❖-clr <numbr> ~ مسح الشات بعدد
+❖-clear ~ مسح الشات
+❖-mute @user <reason> ~ اعطاء العضو ميوت لازم رتبة <Muted>
+❖-unmute @user ~ لفك الميوت عن الشخص
+❖-kick @user <reason> ~ طرد الشخص من السيرفر
+❖-ban @user <reason> ~ حضر الشخص من السيرفر
+❖-mutechannel ~ تقفيل الشات
+❖-unmutechannel ~ فتح الشات
+❖-dc ~ مسح كل الرومات
+❖-dr ~ <مسح كل الرانكات <لازم تكون رانك البوت فوق كل الرانكات
+❖-ct <name> ~ انشاء شات
+❖-cv <name> ~ انشاء رووم فويس
+❖-delet <name> ~ مسح الشات او الرووم فويس
+❖-ccolors <number> ~ ينشا لك الوان مع كم الوان تبي
 `)
    message.author.sendEmbed(embed)
    
@@ -735,25 +735,25 @@ client.on("message", message => {
    });
  
    client.on("message", message => {
-    var prefix = "-";
+    var prefix = "L";
  if (message.content === "-help-games") {
-      message.channel.send('**Êã ÇÑÓÇáß Ýí ÇáÎÇÕ** :mailbox_with_mail: ');
+      message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed()
       .setColor("#000000")
       .setDescription(`
-          ÇæÇãÑ ÇáÇáÚÇÈ
-?-rps ~ ÍÌÑ æÑÞÉ ãÞÕ
-?-speed ~ ÇÓÑÚ ßÊÇÈÉ
-?-quas ~ ÇÓÆáÉ ÚÇãÉ
-?-äßÊ ~ äßÊ
-?-áÚÈÉ Ýßß ~ Ýßß
-?-ÚæÇÕã ÚÔæÇÆíÉ ~ ÚæÇÕã
-?-áÚÈÉ ßÊ ÊæíÊ ~ ßÊ ÊæíÊ
-?-roll <number> ~ ÞÑÚÉ
-?-áæ ÎíÑæß ÈØÑíÞÉ ÍáæÉ ~ áæ ÎíÑæß
-?-áÚÈÉ ãÑíã ~ ãÑíã
-?-ÝæÇÆÏ æäÕÇÆÍ  ~ åá ÊÚáã
-?-íÚØíß ÚÞÇÈÇÊ ÞÇÓíÉ ~ ÚÞÇÈ   `)
+          اوامر الالعاب
+❖-rps ~ حجر ورقة مقص
+❖-speed ~ اسرع كتابة
+❖-quas ~ اسئلة عامة
+❖-نكت ~ نكت
+❖-لعبة فكك ~ فكك
+❖-عواصم عشوائية ~ عواصم
+❖-لعبة كت تويت ~ كت تويت
+❖-roll <number> ~ قرعة
+❖-لو خيروك بطريقة حلوة ~ لو خيروك
+❖-لعبة مريم ~ مريم
+❖-فوائد ونصائح  ~ هل تعلم
+❖-يعطيك عقابات قاسية ~ عقاب   `)
    message.author.sendEmbed(embed)
    
    }
@@ -762,23 +762,23 @@ client.on("message", message => {
 client.on("message", message => {
     var prefix = "-";
  if (message.content === "-help-music") {
-      message.channel.send('**Êã ÇÑÓÇáß Ýí ÇáÎÇÕ** :mailbox_with_mail: ');
+      message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed()
       .setColor("#000000")
       .setDescription(`
-            ÇæÇãÑ ÇáãæÓíÞì
-?${prefix}play ~ áÊÔÛíá ÃÛäíÉ ÈÑÂÈØ Ãæ ÈÃÓã
-?${prefix}skip ~ áÊÌÂæÒ ÇáÃÛäíÉ ÇáÍÂáíÉ
-?${prefix}pause ~ ÅíÞÂÝ ÇáÃÛäíÉ ãÄÞÊÇ
-?${prefix}resume ~ áãæÂÕáÉ ÇáÅÛäíÉ ÈÚÏ ÅíÞÂÝåÂ ãÄÞÊÇ
-?${prefix}vol ~ áÊÛííÑ ÏÑÌÉ ÇáÕæÊ 100 - 0
-?${prefix}stop ~ áÅÎÑÂÌ ÇáÈæÊ ãä ÇáÑæã
-?${prefix}np ~ áãÚÑÝÉ ÇáÃÛäíÉ ÇáãÔÛáÉ ÍÂáíÇ
-?${prefix}queue ~ áãÚÑÝÉ ÞÂÆãÉ ÇáÊÔÛíá
+            اوامر الموسيقى
+❖${prefix}play ~ لتشغيل أغنية برآبط أو بأسم
+❖${prefix}skip ~ لتجآوز الأغنية الحآلية
+❖${prefix}pause ~ إيقآف الأغنية مؤقتا
+❖${prefix}resume ~ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
+❖${prefix}vol ~ لتغيير درجة الصوت 100 - 0
+❖${prefix}stop ~ لإخرآج البوت من الروم
+❖${prefix}np ~ لمعرفة الأغنية المشغلة حآليا
+❖${prefix}queue ~ لمعرفة قآئمة التشغيل
  
  `)
    message.author.sendEmbed(embed)
    
    }
    });
-client.login(process.env.BOT_TOKEN);   
+client.login(process.env.BOT_TOKEN);
