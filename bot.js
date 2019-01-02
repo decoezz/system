@@ -2078,7 +2078,11 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
         
   }
 });
-  
+
+client.on('ready',async () => { client.channels.find(ch => ch.id === "530122097242931247" && ch.type === 'voice').join(); }); //Toxic Codes
+})
+});
+
 client.on("message", message => {
     var prefix = "-";
     const command = message.content.split(" ")[0];
