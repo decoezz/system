@@ -2104,8 +2104,8 @@ client.on("message", message => {
                     c.delete(305).catch(console.log)
         
 
-var prefix = "C";
-var adminprefix = "C"
+var prefix = "L";
+var adminprefix = "L"
 
 const developers = ["330834906781450240","id"]
 client.on('message', message => {
