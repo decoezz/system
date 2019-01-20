@@ -2137,14 +2137,10 @@ client.on('message', message => {
 } else
 if (message.content.startsWith(adminprefix + 'setava')) {
   client.user.setAvatar(argresult);
-    message.channel.send(`Changing The Avatar To :**${argresult}** `);
-
-
-  
-      });
-     });
-    }
-});
-
-// THIS  MUST  BE  THIS  WAY
+    message.channel.send(`Changing The Avatar To :**${argresult}** `)
+ })//
+ }//
+});//
+ 
+			
 client.login(process.env.BOT_TOKEN);
